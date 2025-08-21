@@ -8,6 +8,7 @@ import { VolunteerForm } from "@/components/volunteer-form"
 import { AnimatedSection } from "@/components/animated-section"
 import { ParallaxHero } from "@/components/parallax-hero"
 import { TestimonialCarousel } from "@/components/testimonial-carousel"
+import { InteractiveTimeline } from "@/components/interactive-timeline"
 
 export default function HomePage() {
   const { t } = useLanguage()
@@ -61,6 +62,123 @@ export default function HomePage() {
           </div>
         </div>
       </ParallaxHero>
+
+      {/* About Us Section */}
+      <section id="about" className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <AnimatedSection animation="fade-up">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">{t("home.about.title")}</h2>
+            </div>
+          </AnimatedSection>
+
+          {/* Mission Statement */}
+          <AnimatedSection animation="fade-up" delay={100}>
+            <div className="max-w-4xl mx-auto mb-16">
+              <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/5">
+                <CardHeader className="text-center">
+                  <CardTitle className="text-2xl text-primary">{t("home.about.mission.title")}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg text-muted-foreground leading-relaxed text-center">
+                    {t("home.about.mission.description")}
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </AnimatedSection>
+
+          {/* Core Values */}
+          <div className="mb-16">
+            <AnimatedSection animation="fade-up">
+              <h3 className="text-2xl font-bold text-primary text-center mb-8">{t("home.about.values.title")}</h3>
+            </AnimatedSection>
+            <div className="grid md:grid-cols-3 gap-6">
+              <AnimatedSection animation="slide-left" delay={100}>
+                <Card className="text-center border-primary/20 hover:border-primary/40 transition-colors">
+                  <CardHeader>
+                    <CardTitle className="text-primary">{t("home.about.values.compassion")}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{t("home.about.values.compassion.desc")}</p>
+                  </CardContent>
+                </Card>
+              </AnimatedSection>
+              <AnimatedSection animation="fade-up" delay={200}>
+                <Card className="text-center border-secondary/20 hover:border-secondary/40 transition-colors">
+                  <CardHeader>
+                    <CardTitle className="text-secondary">{t("home.about.values.integrity")}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{t("home.about.values.integrity.desc")}</p>
+                  </CardContent>
+                </Card>
+              </AnimatedSection>
+              <AnimatedSection animation="slide-right" delay={300}>
+                <Card className="text-center border-accent/20 hover:border-accent/40 transition-colors">
+                  <CardHeader>
+                    <CardTitle className="text-accent">{t("home.about.values.community")}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{t("home.about.values.community.desc")}</p>
+                  </CardContent>
+                </Card>
+              </AnimatedSection>
+            </div>
+          </div>
+
+          {/* Milestones Timeline */}
+          <div>
+            <AnimatedSection animation="fade-up">
+              <h3 className="text-2xl font-bold text-primary text-center mb-8">{t("home.about.milestones.title")}</h3>
+            </AnimatedSection>
+            <AnimatedSection animation="fade-up" delay={100}>
+              <InteractiveTimeline
+                events={[
+                  {
+                    year: "2016",
+                    title: t("home.about.milestones.2016.title") || "Foundation Established",
+                    description: t("home.about.milestones.2016"),
+                    color: "primary",
+                    details:
+                      "Started with just 5 volunteers and a vision to make Herzeliya a better place for everyone.",
+                  },
+                  {
+                    year: "2018",
+                    title: t("home.about.milestones.2018.title") || "First Major Program",
+                    description: t("home.about.milestones.2018"),
+                    color: "secondary",
+                    details: "Launched our elderly support program, serving over 50 seniors in the community.",
+                  },
+                  {
+                    year: "2020",
+                    title: t("home.about.milestones.2020.title") || "Pandemic Response",
+                    description: t("home.about.milestones.2020"),
+                    color: "accent",
+                    details:
+                      "Adapted our services during COVID-19, providing essential support to vulnerable community members.",
+                  },
+                  {
+                    year: "2022",
+                    title: t("home.about.milestones.2022.title") || "Youth Programs Launch",
+                    description: t("home.about.milestones.2022"),
+                    color: "primary",
+                    details:
+                      "Expanded to include youth mentorship and environmental programs, reaching over 200 young people.",
+                  },
+                  {
+                    year: "2024",
+                    title: t("home.about.milestones.2024.title") || "Community Recognition",
+                    description: t("home.about.milestones.2024"),
+                    color: "secondary",
+                    details: "Received the Herzeliya Community Excellence Award for outstanding volunteer service.",
+                  },
+                ]}
+              />
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
 
       {/* Programs Section */}
       <ParallaxHero backgroundImage="/mentor-student-learning.png" className="py-16" speed={0.4}>
@@ -159,157 +277,6 @@ export default function HomePage() {
           </div>
         </section>
       </ParallaxHero>
-
-      {/* About Us Section */}
-      <section id="about" className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <AnimatedSection animation="fade-up">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">{t("home.about.title")}</h2>
-            </div>
-          </AnimatedSection>
-
-          {/* Mission Statement */}
-          <AnimatedSection animation="fade-up" delay={100}>
-            <div className="max-w-4xl mx-auto mb-16">
-              <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/5">
-                <CardHeader className="text-center">
-                  <CardTitle className="text-2xl text-primary">{t("home.about.mission.title")}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-lg text-muted-foreground leading-relaxed text-center">
-                    {t("home.about.mission.description")}
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </AnimatedSection>
-
-          {/* Core Values */}
-          <div className="mb-16">
-            <AnimatedSection animation="fade-up">
-              <h3 className="text-2xl font-bold text-primary text-center mb-8">{t("home.about.values.title")}</h3>
-            </AnimatedSection>
-            <div className="grid md:grid-cols-3 gap-6">
-              <AnimatedSection animation="slide-left" delay={100}>
-                <Card className="text-center border-primary/20 hover:border-primary/40 transition-colors">
-                  <CardHeader>
-                    <CardTitle className="text-primary">{t("home.about.values.compassion")}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{t("home.about.values.compassion.desc")}</p>
-                  </CardContent>
-                </Card>
-              </AnimatedSection>
-              <AnimatedSection animation="fade-up" delay={200}>
-                <Card className="text-center border-secondary/20 hover:border-secondary/40 transition-colors">
-                  <CardHeader>
-                    <CardTitle className="text-secondary">{t("home.about.values.integrity")}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{t("home.about.values.integrity.desc")}</p>
-                  </CardContent>
-                </Card>
-              </AnimatedSection>
-              <AnimatedSection animation="slide-right" delay={300}>
-                <Card className="text-center border-accent/20 hover:border-accent/40 transition-colors">
-                  <CardHeader>
-                    <CardTitle className="text-accent">{t("home.about.values.community")}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{t("home.about.values.community.desc")}</p>
-                  </CardContent>
-                </Card>
-              </AnimatedSection>
-            </div>
-          </div>
-
-          {/* Founder Section */}
-          <div className="mb-16">
-            <AnimatedSection animation="fade-up">
-              <h3 className="text-2xl font-bold text-primary text-center mb-8">{t("home.about.founder.title")}</h3>
-            </AnimatedSection>
-            <AnimatedSection animation="fade-up" delay={100}>
-              <Card className="max-w-2xl mx-auto border-primary/20">
-                <CardContent className="pt-6">
-                  <div className="flex flex-col md:flex-row items-center gap-6">
-                    <div className="w-32 h-32 rounded-full overflow-hidden flex-shrink-0">
-                      <img
-                        src="/yoav-ilanberg-headshot.png"
-                        alt="Yoav Ilanberg, Founder"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="text-center md:text-left">
-                      <h4 className="text-xl font-bold text-primary mb-2">{t("home.about.founder.name")}</h4>
-                      <p className="text-muted-foreground leading-relaxed">{t("home.about.founder.bio")}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </AnimatedSection>
-          </div>
-
-          {/* Milestones Timeline */}
-          <div>
-            <AnimatedSection animation="fade-up">
-              <h3 className="text-2xl font-bold text-primary text-center mb-8">{t("home.about.milestones.title")}</h3>
-            </AnimatedSection>
-            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
-              <AnimatedSection animation="fade-up" delay={100}>
-                <Card className="text-center border-primary/20 hover:border-primary/40 transition-colors">
-                  <CardHeader>
-                    <CardTitle className="text-primary text-lg">2016</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{t("home.about.milestones.2016")}</p>
-                  </CardContent>
-                </Card>
-              </AnimatedSection>
-              <AnimatedSection animation="fade-up" delay={200}>
-                <Card className="text-center border-secondary/20 hover:border-secondary/40 transition-colors">
-                  <CardHeader>
-                    <CardTitle className="text-secondary text-lg">2018</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{t("home.about.milestones.2018")}</p>
-                  </CardContent>
-                </Card>
-              </AnimatedSection>
-              <AnimatedSection animation="fade-up" delay={300}>
-                <Card className="text-center border-accent/20 hover:border-accent/40 transition-colors">
-                  <CardHeader>
-                    <CardTitle className="text-accent text-lg">2020</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{t("home.about.milestones.2020")}</p>
-                  </CardContent>
-                </Card>
-              </AnimatedSection>
-              <AnimatedSection animation="fade-up" delay={400}>
-                <Card className="text-center border-primary/20 hover:border-primary/40 transition-colors">
-                  <CardHeader>
-                    <CardTitle className="text-primary text-lg">2022</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{t("home.about.milestones.2022")}</p>
-                  </CardContent>
-                </Card>
-              </AnimatedSection>
-              <AnimatedSection animation="fade-up" delay={500}>
-                <Card className="text-center border-secondary/20 hover:border-secondary/40 transition-colors">
-                  <CardHeader>
-                    <CardTitle className="text-secondary text-lg">2024</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{t("home.about.milestones.2024")}</p>
-                  </CardContent>
-                </Card>
-              </AnimatedSection>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Get Involved Section */}
       <section id="get-involved" className="py-16 bg-background">

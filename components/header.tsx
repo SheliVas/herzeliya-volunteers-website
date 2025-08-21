@@ -12,6 +12,7 @@ const navigationKeys = [
   { href: "/", key: "nav.home" },
   { href: "#about", key: "nav.about" },
   { href: "#programs", key: "nav.programs" },
+  { href: "/gallery", key: "nav.gallery" },
   { href: "#get-involved", key: "nav.getInvolved" },
   { href: "#contact", key: "nav.contact" },
 ]
