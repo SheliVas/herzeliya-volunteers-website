@@ -66,12 +66,17 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all duration-200">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          {/* Organization Name */}
+          {/* Organization Logo and Name */}
           <Link
             href="/"
-            className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm transition-all duration-200 hover:scale-105"
+            className="flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm transition-all duration-200 hover:scale-105"
             aria-label={`${t("site.title")} - ${t("nav.home")}`}
           >
+            <img
+              src="/logo.png"
+              alt={t("site.title")}
+              className="h-10 w-10 rounded-full object-cover"
+            />
             <span className="text-xl font-serif font-bold text-primary transition-colors duration-200">
               {t("site.title")}
             </span>
