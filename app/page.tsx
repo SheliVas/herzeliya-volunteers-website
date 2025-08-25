@@ -17,7 +17,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <ParallaxVideoHero
-        backgroundVideo="/foodClothingPacking.mp4"
+        backgroundVideo="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_6PT9B7a4ecS2rlmIW6oywde2QjCt/1nAESb6KwFhg73onqcEkor/public/foodClothingPacking.mp4"
         className="py-20 lg:py-32 min-h-[80vh] flex items-center"
         speed={0.3}
       >
@@ -37,11 +37,7 @@ export default function HomePage() {
                       {t("home.hero.donateNow")}
                     </Link>
                   </Button>
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-primary hover:bg-primary/90 shadow-lg"
-                  >
+                  <Button asChild size="lg" className="bg-primary hover:bg-primary/90 shadow-lg">
                     <Link href="#get-involved">{t("home.hero.joinUs")}</Link>
                   </Button>
                 </div>
@@ -54,9 +50,7 @@ export default function HomePage() {
                     <div className="text-4xl font-bold text-white drop-shadow-lg">300+</div>
                     <p className="text-white/90 font-medium">{t("home.impact.volunteers")}</p>
                     <div className="w-16 h-1 bg-primary mx-auto rounded-full"></div>
-                    <p className="text-white/80 text-sm leading-relaxed">
-                      {t("home.hero.supportedFamilies")}
-                    </p>
+                    <p className="text-white/80 text-sm leading-relaxed">{t("home.hero.supportedFamilies")}</p>
                   </div>
                 </div>
               </div>
@@ -89,6 +83,136 @@ export default function HomePage() {
               </Card>
             </div>
           </AnimatedSection>
+
+          {/* How We Work operations section with video backgrounds */}
+          <div className="mb-16">
+            <AnimatedSection animation="fade-up">
+              <div className="text-center mb-12">
+                <h3 className="text-2xl lg:text-3xl font-bold text-primary mb-4">{t("home.about.operations.title")}</h3>
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{t("home.about.operations.subtitle")}</p>
+              </div>
+            </AnimatedSection>
+
+            <div className="grid lg:grid-cols-2 gap-8 mb-12">
+              {/* Warehouse Operations with Video Background */}
+              <AnimatedSection animation="slide-right" delay={100}>
+                <div className="relative overflow-hidden rounded-xl">
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover opacity-20"
+                  >
+                    <source src="/warehouse-video.mp4" type="video/mp4" />
+                  </video>
+                  <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm border border-primary/20 p-8 h-full">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-4">
+                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                          />
+                        </svg>
+                      </div>
+                      <h4 className="text-xl font-bold text-primary">{t("home.about.warehouse.title")}</h4>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed">{t("home.about.warehouse.description")}</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+
+              {/* Thrift Shops with Video Background */}
+              <AnimatedSection animation="slide-left" delay={200}>
+                <div className="relative overflow-hidden rounded-xl">
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover opacity-20"
+                  >
+                    <source src="/shop-video.mp4" type="video/mp4" />
+                  </video>
+                  <div className="relative bg-gradient-to-br from-secondary/10 to-secondary/5 backdrop-blur-sm border border-secondary/20 p-8 h-full">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mr-4">
+                        <svg className="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                          />
+                        </svg>
+                      </div>
+                      <h4 className="text-xl font-bold text-secondary">{t("home.about.shops.title")}</h4>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed">{t("home.about.shops.description")}</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            </div>
+
+            {/* Financial Support */}
+            <AnimatedSection animation="fade-up" delay={300}>
+              <div className="max-w-4xl mx-auto">
+                <Card className="border-accent/20 bg-gradient-to-br from-accent/5 to-accent/10">
+                  <CardHeader className="text-center">
+                    <div className="flex items-center justify-center mb-4">
+                      <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
+                        <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <CardTitle className="text-xl text-accent">{t("home.about.donations.title")}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed text-center">
+                      {t("home.about.donations.description")}
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </AnimatedSection>
+
+            {/* Distribution System */}
+            <AnimatedSection animation="fade-up" delay={400}>
+              <div className="max-w-4xl mx-auto mt-8">
+                <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10">
+                  <CardHeader className="text-center">
+                    <div className="flex items-center justify-center mb-4">
+                      <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <CardTitle className="text-xl text-primary">{t("home.about.distribution.title")}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed text-center">
+                      {t("home.about.distribution.description")}
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </AnimatedSection>
+          </div>
 
           {/* Core Values */}
           <div className="mb-16">

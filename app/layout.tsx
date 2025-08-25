@@ -6,7 +6,6 @@ import { Footer } from "@/components/footer"
 import { SkipLink } from "@/components/skip-link"
 import { LanguageProvider } from "@/lib/language-context"
 import "./globals.css"
-import Script from "next/script"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,7 +42,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </LanguageProvider>
-        <Script src="https://website-widgets.pages.dev/dist/sienna.min.js" strategy="afterInteractive" />
+        {/* <Script src="https://website-widgets.pages.dev/dist/sienna.min.js" strategy="afterInteractive" /> */}
       </body>
     </html>
   )
