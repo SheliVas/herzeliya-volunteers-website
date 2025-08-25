@@ -248,4 +248,95 @@
   .animate-fade-in-up {
     animation: fadeInUp 0.6s ease-out forwards;
   }
+
+  /* Added beautiful gradient button styles using blue and green shades */
+  /* Primary button gradient: Ocean blue to bright teal */
+  .btn-primary,
+  button[data-variant="primary"],
+  .bg-primary {
+    background: linear-gradient(135deg, oklch(0.5 0.18 220) 0%, oklch(0.65 0.16 180) 100%);
+    border: none;
+    color: oklch(0.98 0.005 220);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary:hover,
+  button[data-variant="primary"]:hover,
+  .bg-primary:hover {
+    background: linear-gradient(135deg, oklch(0.45 0.2 220) 0%, oklch(0.6 0.18 180) 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px oklch(0.5 0.18 220 / 0.3);
+  }
+
+  /* Secondary button gradient: Emerald green to teal */
+  .btn-secondary,
+  button[data-variant="secondary"],
+  .bg-secondary {
+    background: linear-gradient(135deg, oklch(0.55 0.16 150) 0%, oklch(0.65 0.16 180) 100%);
+    border: none;
+    color: oklch(0.98 0.005 150);
+  }
+
+  .btn-secondary:hover,
+  button[data-variant="secondary"]:hover,
+  .bg-secondary:hover {
+    background: linear-gradient(135deg, oklch(0.5 0.18 150) 0%, oklch(0.6 0.18 180) 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px oklch(0.55 0.16 150 / 0.3);
+  }
+
+  /* Accent button gradient: Bright teal to blue-green */
+  .btn-accent,
+  button[data-variant="accent"],
+  .bg-accent {
+    background: linear-gradient(135deg, oklch(0.65 0.16 180) 0%, oklch(0.6 0.15 200) 100%);
+    border: none;
+    color: oklch(0.98 0.005 180);
+  }
+
+  .btn-accent:hover,
+  button[data-variant="accent"]:hover,
+  .bg-accent:hover {
+    background: linear-gradient(135deg, oklch(0.6 0.18 180) 0%, oklch(0.55 0.17 200) 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px oklch(0.65 0.16 180 / 0.3);
+  }
+
+  /* Dark mode gradient adjustments */
+  .dark .btn-primary,
+  .dark button[data-variant="primary"],
+  .dark .bg-primary {
+    background: linear-gradient(135deg, oklch(0.65 0.16 220) 0%, oklch(0.7 0.14 180) 100%);
+  }
+
+  .dark .btn-primary:hover,
+  .dark button[data-variant="primary"]:hover,
+  .dark .bg-primary:hover {
+    background: linear-gradient(135deg, oklch(0.7 0.18 220) 0%, oklch(0.75 0.16 180) 100%);
+  }
+
+  .dark .btn-secondary,
+  .dark button[data-variant="secondary"],
+  .dark .bg-secondary {
+    background: linear-gradient(135deg, oklch(0.6 0.14 150) 0%, oklch(0.7 0.14 180) 100%);
+  }
+
+  .dark .btn-secondary:hover,
+  .dark button[data-variant="secondary"]:hover,
+  .dark .bg-secondary:hover {
+    background: linear-gradient(135deg, oklch(0.65 0.16 150) 0%, oklch(0.75 0.16 180) 100%);
+  }
+
+  .dark .btn-accent,
+  .dark button[data-variant="accent"],
+  .dark .bg-accent {
+    background: linear-gradient(135deg, oklch(0.7 0.14 180) 0%, oklch(0.65 0.13 200) 100%);
+  }
+
+  .dark .btn-accent:hover,
+  .dark button[data-variant="accent"]:hover,
+  .dark .bg-accent:hover {
+    background: linear-gradient(135deg, oklch(0.75 0.16 180) 0%, oklch(0.7 0.15 200) 100%);
+  }
 }

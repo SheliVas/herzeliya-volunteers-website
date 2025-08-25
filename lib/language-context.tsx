@@ -3,7 +3,7 @@
 import type React from "react"
 import { createContext, useContext, useState, useEffect } from "react"
 
-type Language = "he" | "en" 
+type Language = "he" | "en"
 
 interface LanguageContextType {
   language: Language
@@ -31,7 +31,8 @@ const translations = {
       "Empowering volunteers to create lasting positive change in Herzeliya through meaningful programs and community engagement.",
     "home.hero.joinUs": "Join Us",
     "home.hero.donateNow": "Donate Now",
-    "home.hero.supportedFamilies": "Our food packages reach single-parent families, large families, and elderly individuals across Herzeliya on a weekly basis",
+    "home.hero.supportedFamilies":
+      "Our food packages reach single-parent families, large families, and elderly individuals across Herzeliya on a weekly basis",
     "home.impact.title": "Our Impact",
     "home.impact.volunteers": "Active Volunteers",
     "home.impact.programs": "Community Programs",
@@ -53,6 +54,21 @@ const translations = {
     "home.about.mission.title": "Our Mission",
     "home.about.mission.description":
       "To strengthen the Herzeliya community by connecting passionate volunteers with meaningful opportunities to create lasting positive change and support those in need.",
+    "home.about.operations.title": "How We Work",
+    "home.about.operations.subtitle":
+      "Our foundation operates through a comprehensive system that ensures maximum impact for families in need",
+    "home.about.warehouse.title": "Food Distribution Center",
+    "home.about.warehouse.description":
+      "Our dedicated warehouse serves as the heart of our operations, where volunteers carefully pack grocery packages for families in need. These packages are delivered weekly by our distribution volunteers to single-parent families, large families, and elderly individuals across Herzeliya.",
+    "home.about.shops.title": "Community Thrift Stores",
+    "home.about.shops.description":
+      "We operate 3 second-hand shops throughout Herzeliya, selling clothing, jewelry, shoes, toys, books, and more. All earnings from these stores go directly toward purchasing groceries for our warehouse, creating a sustainable cycle of community support.",
+    "home.about.donations.title": "Financial Support",
+    "home.about.donations.description":
+      "Money donations from generous community members enable us to purchase fresh groceries and essential items. Combined with proceeds from our thrift stores, we ensure consistent weekly food distribution to those who need it most.",
+    "home.about.distribution.title": "Volunteer Distribution Network",
+    "home.about.distribution.description":
+      "Our dedicated distribution volunteers follow regular weekly routes throughout Herzeliya, ensuring reliable delivery to families in need. The more volunteers we have, the more families we can reach and support with consistent food assistance.",
     "home.about.values.title": "Our Core Values",
     "home.about.values.compassion": "Compassion",
     "home.about.values.compassion.desc": "We approach every interaction with empathy and understanding",
@@ -159,10 +175,12 @@ const translations = {
     "home.description":
       "הצטרפו לקהילת המתנדבים המסורים שלנו ועשו השפעה חיובית בהרצליה. יחד, נוכל לבנות קהילה חזקה ואכפתית יותר.",
     "home.hero.headline": "מצטרפים לעשייה ותומכים בקהילה",
-    "home.hero.tagline": "עמותת מתנדבי הרצליה פועלת משנת 1994 בעזרת עשרות תושבים מתנדבים שמאמינים שקהילה חזקה נבנית ממעשים טובים",
+    "home.hero.tagline":
+      "עמותת מתנדבי הרצליה פועלת משנת 1994 בעזרת עשרות תושבים מתנדבים שמאמינים שקהילה חזקה נבנית ממעשים טובים",
     "home.hero.joinUs": "הצטרפו אלינו",
     "home.hero.donateNow": "תרמו עכשיו",
-    "home.hero.supportedFamilies": "חבילות המזון שלנו מגיעות למשפחות חד הוריות, משפחות מרובות ילדים וקשישים ברחבי העיר הרצליה בתדירות שבועית",
+    "home.hero.supportedFamilies":
+      "חבילות המזון שלנו מגיעות למשפחות חד הוריות, משפחות מרובות ילדים וקשישים ברחבי העיר הרצליה בתדירות שבועית",
     "home.impact.title": "ההשפעה שלנו",
     "home.impact.volunteers": "משפחות נתמכות",
     "home.impact.programs": "תוכניות קהילתיות",
@@ -182,6 +200,21 @@ const translations = {
     "home.about.mission.title": "המשימה שלנו",
     "home.about.mission.description":
       "לחזק את קהילת הרצליה על ידי חיבור מתנדבים נלהבים עם הזדמנויות משמעותיות ליצור שינוי חיובי מתמשך ולתמוך בנזקקים.",
+    "home.about.operations.title": "איך אנחנו עובדים",
+    "home.about.operations.subtitle":
+      "העמותה שלנו פועלת באמצעות מערכת מקיפה המבטיחה השפעה מקסימלית למשפחות הזקוקות לעזרה",
+    "home.about.warehouse.title": "מרכז חלוקת מזון",
+    "home.about.warehouse.description":
+      "המחסן המיועד שלנו משמש כלב הפעילות שלנו, שם מתנדבים אורזים בקפידה חבילות מזון למשפחות נזקקות. החבילות הללו מחולקות מדי שבוע על ידי מתנדבי החלוקה שלנו למשפחות חד הוריות, משפחות מרובות ילדים וקשישים ברחבי הרצליה.",
+    "home.about.shops.title": "חנויות יד שנייה קהילתיות",
+    "home.about.shops.description":
+      "אנו מפעילים 3 חנויות יד שנייה ברחבי הרצליה, המוכרות בגדים, תכשיטים, נעליים, צעצועים, ספרים ועוד. כל הרווחים מהחנויות הללו מועברים ישירות לרכישת מצרכים למחסן שלנו, ויוצרים מעגל קיים של תמיכה קהילתית.",
+    "home.about.donations.title": "תמיכה כספית",
+    "home.about.donations.description":
+      "תרומות כספיות מחברי קהילה נדיבים מאפשרות לנו לרכוש מצרכים טריים ופריטים חיוניים. בשילוב עם הכנסות מחנויות היד השנייה שלנו, אנו מבטיחים חלוקת מזון שבועית עקבית לאלה הזקוקים לכך ביותר.",
+    "home.about.distribution.title": "רשת חלוקה מתנדבת",
+    "home.about.distribution.description":
+      "מתנדבי החלוקה המסורים שלנו עוקבים אחר מסלולים שבועיים קבועים ברחבי הרצליה, ומבטיחים משלוח אמין למשפחות הזקוקות לעזרה. ככל שיש לנו יותר מתנדבים, כך נוכל להגיע ולתמוך ביותר משפחות עם סיוע מזון עקבי.",
     "home.about.values.title": "הערכים המרכזיים שלנו",
     "home.about.values.compassion": "חמלה",
     "home.about.values.compassion.desc": "אנו ניגשים לכל אינטראקציה עם אמפתיה והבנה",
