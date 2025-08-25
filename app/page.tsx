@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Link from "next/link"
 import { VolunteerForm } from "@/components/volunteer-form"
 import { AnimatedSection } from "@/components/animated-section"
+import { ParallaxVideoHero } from "@/components/parallax-video-hero"
 import { ParallaxHero } from "@/components/parallax-hero"
 import { TestimonialCarousel } from "@/components/testimonial-carousel"
 import { InteractiveTimeline } from "@/components/interactive-timeline"
@@ -15,8 +16,8 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen overflow-x-hidden">
-      <ParallaxHero
-        backgroundImage="/community-garden-volunteers.png"
+      <ParallaxVideoHero
+        backgroundVideo="/foodClothingPacking.mp4"
         className="py-20 lg:py-32 min-h-[80vh] flex items-center"
         speed={0.3}
       >
@@ -24,23 +25,24 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection animation="fade-up">
               <div className="space-y-6">
-                <h1 className="text-4xl lg:text-6xl font-bold text-white leading-tight drop-shadow-lg">
+                <h1 className="text-3xl lg:text-5xl font-bold text-white leading-tight drop-shadow-lg">
                   {t("home.hero.headline")}
                 </h1>
                 <p className="text-lg text-white/90 leading-relaxed max-w-xl drop-shadow-md">
                   {t("home.hero.tagline")}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button asChild size="lg" className="bg-primary hover:bg-primary/90 shadow-lg">
-                    <Link href="/get-involved">{t("home.hero.joinUs")}</Link>
+                  <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 shadow-lg">
+                    <Link href="https://pay.tranzila.com/mitnadvim/ekpvdWF5bnp0QmhQazRHYWdwTmlaUT09">
+                      {t("home.hero.donateNow")}
+                    </Link>
                   </Button>
                   <Button
                     asChild
-                    variant="outline"
                     size="lg"
-                    className="border-white text-white hover:bg-white hover:text-primary bg-transparent backdrop-blur-sm shadow-lg"
+                    className="bg-primary hover:bg-primary/90 shadow-lg"
                   >
-                    <Link href="#donate">{t("home.hero.donateNow")}</Link>
+                    <Link href="#get-involved">{t("home.hero.joinUs")}</Link>
                   </Button>
                 </div>
               </div>
@@ -49,11 +51,11 @@ export default function HomePage() {
               <div className="relative">
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 shadow-xl border border-white/20">
                   <div className="text-center space-y-4">
-                    <div className="text-4xl font-bold text-white drop-shadow-lg">250+</div>
+                    <div className="text-4xl font-bold text-white drop-shadow-lg">300+</div>
                     <p className="text-white/90 font-medium">{t("home.impact.volunteers")}</p>
                     <div className="w-16 h-1 bg-primary mx-auto rounded-full"></div>
                     <p className="text-white/80 text-sm leading-relaxed">
-                      Join our growing community of dedicated volunteers making a difference in Herzeliya
+                      {t("home.hero.supportedFamilies")}
                     </p>
                   </div>
                 </div>
@@ -61,7 +63,7 @@ export default function HomePage() {
             </AnimatedSection>
           </div>
         </div>
-      </ParallaxHero>
+      </ParallaxVideoHero>
 
       {/* About Us Section */}
       <section id="about" className="py-16 bg-background">
@@ -309,8 +311,7 @@ export default function HomePage() {
                     </p>
                     <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 w-full">
                       <a
-                        href="https://donate.example.com/herzeliya-volunteers"
-                        target="_blank"
+                        href="https://pay.tranzila.com/mitnadvim/ekpvdWF5bnp0QmhQazRHYWdwTmlaUT09"
                         rel="noopener noreferrer"
                         aria-label={`${t("home.getInvolved.donation.button")} - ${t("accessibility.openInNewTab")}`}
                       >

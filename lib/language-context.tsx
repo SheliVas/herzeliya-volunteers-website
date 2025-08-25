@@ -3,7 +3,7 @@
 import type React from "react"
 import { createContext, useContext, useState, useEffect } from "react"
 
-type Language = "en" | "he"
+type Language = "he" | "en" 
 
 interface LanguageContextType {
   language: Language
@@ -31,6 +31,7 @@ const translations = {
       "Empowering volunteers to create lasting positive change in Herzeliya through meaningful programs and community engagement.",
     "home.hero.joinUs": "Join Us",
     "home.hero.donateNow": "Donate Now",
+    "home.hero.supportedFamilies": "Our food packages reach single-parent families, large families, and elderly individuals across Herzeliya on a weekly basis",
     "home.impact.title": "Our Impact",
     "home.impact.volunteers": "Active Volunteers",
     "home.impact.programs": "Community Programs",
@@ -146,7 +147,7 @@ const translations = {
     "footer.social.linkedin": "Connect with us on LinkedIn",
   },
   he: {
-    "site.title": "מתנדבי הרצליה",
+    "site.title": "עמותת מתנדבי הרצליה",
     "nav.home": "בית",
     "nav.about": "אודותינו",
     "nav.programs": "תוכניות",
@@ -157,12 +158,13 @@ const translations = {
     "home.title": "ברוכים הבאים למתנדבי הרצליה",
     "home.description":
       "הצטרפו לקהילת המתנדבים המסורים שלנו ועשו השפעה חיובית בהרצליה. יחד, נוכל לבנות קהילה חזקה ואכפתית יותר.",
-    "home.hero.headline": "בונים קהילה חזקה יותר יחד",
-    "home.hero.tagline": "מעצימים מתנדבים ליצור שינוי חיובי מתמשך בהרצליה באמצעות תוכניות משמעותיות ומעורבות קהילתית.",
+    "home.hero.headline": "מצטרפים לעשייה ותומכים בקהילה",
+    "home.hero.tagline": "עמותת מתנדבי הרצליה פועלת משנת 1994 בעזרת עשרות תושבים מתנדבים שמאמינים שקהילה חזקה נבנית ממעשים טובים",
     "home.hero.joinUs": "הצטרפו אלינו",
     "home.hero.donateNow": "תרמו עכשיו",
+    "home.hero.supportedFamilies": "חבילות המזון שלנו מגיעות למשפחות חד הוריות, משפחות מרובות ילדים וקשישים ברחבי העיר הרצליה בתדירות שבועית",
     "home.impact.title": "ההשפעה שלנו",
-    "home.impact.volunteers": "מתנדבים פעילים",
+    "home.impact.volunteers": "משפחות נתמכות",
     "home.impact.programs": "תוכניות קהילתיות",
     "home.impact.years": "שנות פעילות",
     "home.impact.families": "משפחות שנעזרו",
