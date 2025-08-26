@@ -7,17 +7,50 @@ import { Lightbox } from "@/components/lightbox"
 
 type GalleryImage = { src: string; alt: string }
 const galleryImages: GalleryImage[] = [
-  { src: "/gallery/foodcenter1.jpeg", alt: "foodcenter1.jpeg" },
-  { src: "/gallery/foodcenter2.jpeg", alt: "foodcenter2.jpeg" },
-  { src: "/gallery/foodcenter3.png", alt: "foodcenter3.png" },
-  { src: "/gallery/foodcenter4.png", alt: "foodcenter4.png" },
-  { src: "/gallery/shop1.png", alt: "shop1.png" },
-  { src: "/gallery/shop11.jpeg", alt: "shop11.jpeg" },
-  { src: "/gallery/shop12.png", alt: "shop12.png" },
-  { src: "/gallery/shop2.png", alt: "shop2.png" },
-  { src: "/gallery/shop21.png", alt: "shop21.png" },
-  { src: "/gallery/shop3.jpeg", alt: "shop3.jpeg" },
-  { src: "/gallery/shop31.jpeg", alt: "shop31.jpeg" },
+  {
+    src: "/foodcenter1.jpeg",
+    alt: "Food Distribution Center - Volunteers packing groceries",
+  },
+  {
+    src: "/foodcenter2.jpeg",
+    alt: "Food Distribution Center - Warehouse operations",
+  },
+  {
+    src: "/foodcenter3.png",
+    alt: "Food Distribution Center - Community volunteers",
+  },
+  {
+    src: "/foodcenter4.png",
+    alt: "Food Distribution Center - Food packaging",
+  },
+  {
+    src: "/shop1.png",
+    alt: "Thrift Shop - Clothing section",
+  },
+  {
+    src: "/shop11.jpeg",
+    alt: "Thrift Shop - Interior view",
+  },
+  {
+    src: "/shop12.png",
+    alt: "Thrift Shop - Merchandise display",
+  },
+  {
+    src: "/shop2.png",
+    alt: "Thrift Shop - Customer area",
+  },
+  {
+    src: "/shop21.png",
+    alt: "Thrift Shop - Volunteer workspace",
+  },
+  {
+    src: "/shop3.jpeg",
+    alt: "Thrift Shop - Donation sorting",
+  },
+  {
+    src: "/shop31.jpeg",
+    alt: "Thrift Shop - Community impact",
+  },
 ]
 
 export default function GalleryPage() {
@@ -72,7 +105,7 @@ export default function GalleryPage() {
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src={image.src}
+                    src={image.src || "/placeholder.svg"}
                     alt={image.alt}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     loading="lazy"
