@@ -280,7 +280,11 @@ export default function HomePage() {
       </section>
 
       {/* Shops Section */}
-      <ParallaxHero backgroundImage="/mentor-student-learning.png" className="py-16" speed={0.4}>
+      <ParallaxVideoHero
+        backgroundVideo="/public/clothingBoxPacking2.mp4"
+        className="py-20 lg:py-32 min-h-[80vh] flex items-center"
+        speed={0.3}
+      >
         <section id="shops" className="relative">
           <div className="container mx-auto px-4">
             <AnimatedSection animation="fade-up">
@@ -327,7 +331,7 @@ export default function HomePage() {
             </AnimatedSection>
           </div>
         </section>
-      </ParallaxHero>
+  </ParallaxVideoHero>
 
       {/* Get Involved Section */}
       <section id="get-involved" className="py-16 section-pattern-secondary floating-shapes">
