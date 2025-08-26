@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useLanguage } from "@/lib/language-context"
 
 interface Testimonial {
   quote: string
@@ -18,8 +19,9 @@ interface TestimonialCarouselProps {
 export function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const { language } = useLanguage()
+  const isRTL = language === "he"
 
-  // Auto-play functionality
   useEffect(() => {
     if (!isAutoPlaying) return
 
@@ -33,7 +35,6 @@ export function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) 
   const goToSlide = (index: number) => {
     setCurrentIndex(index)
     setIsAutoPlaying(false)
-    // Resume auto-play after 10 seconds of inactivity
     setTimeout(() => setIsAutoPlaying(true), 10000)
   }
 
@@ -66,7 +67,9 @@ export function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) 
       <div className="overflow-hidden rounded-lg">
         <div
           className="flex transition-transform duration-500 ease-out"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          style={{
+            transform: isRTL ? `translateX(${currentIndex * 100}%)` : `translateX(-${currentIndex * 100}%)`,
+          }}
         >
           {testimonials.map((testimonial, index) => (
             <div key={index} className="w-full flex-shrink-0 px-4">
