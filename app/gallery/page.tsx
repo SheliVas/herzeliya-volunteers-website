@@ -5,61 +5,19 @@ import { useLanguage } from "@/lib/language-context"
 import { AnimatedSection } from "@/components/animated-section"
 import { Lightbox } from "@/components/lightbox"
 
-const galleryImages = [
-  {
-    src: "/community-garden-volunteers.png",
-    alt: "Community Garden Volunteers",
-    caption:
-      "Our volunteers working together to maintain the community garden, fostering both environmental care and community bonds.",
-  },
-  {
-    src: "/elderly-volunteer-smile.png",
-    alt: "Senior Support Program",
-    caption:
-      "A heartwarming moment from our senior support program, where volunteers provide companionship and assistance to elderly community members.",
-  },
-  {
-    src: "/mentor-student-learning.png",
-    alt: "Youth Mentorship Session",
-    caption:
-      "One-on-one mentorship sessions help young people develop confidence and life skills through personalized guidance and support.",
-  },
-  {
-    src: "/placeholder.svg?height=400&width=600",
-    alt: "Beach Cleanup Initiative",
-    caption:
-      "Environmental volunteers participating in our monthly beach cleanup, protecting Herzeliya's beautiful coastline for future generations.",
-  },
-  {
-    src: "/placeholder.svg?height=400&width=600",
-    alt: "Community Kitchen",
-    caption:
-      "Volunteers preparing and serving meals at our community kitchen, ensuring no one in Herzeliya goes hungry.",
-  },
-  {
-    src: "/placeholder.svg?height=400&width=600",
-    alt: "Reading Program",
-    caption:
-      "Our literacy volunteers reading to children at the local library, fostering a love of learning and education in our youth.",
-  },
-  {
-    src: "/placeholder.svg?height=400&width=600",
-    alt: "Tree Planting Event",
-    caption:
-      "Annual tree planting event where volunteers help green our city and combat climate change through environmental action.",
-  },
-  {
-    src: "/placeholder.svg?height=400&width=600",
-    alt: "Community Festival",
-    caption:
-      "Volunteers organizing and participating in our annual community festival, bringing neighbors together in celebration.",
-  },
-  {
-    src: "/placeholder.svg?height=400&width=600",
-    alt: "Digital Literacy Program",
-    caption:
-      "Tech-savvy volunteers helping seniors navigate the digital world, bridging the generation gap through patient instruction.",
-  },
+type GalleryImage = { src: string; alt: string }
+const galleryImages: GalleryImage[] = [
+  { src: "/gallery/foodcenter1.jpeg", alt: "foodcenter1.jpeg" },
+  { src: "/gallery/foodcenter2.jpeg", alt: "foodcenter2.jpeg" },
+  { src: "/gallery/foodcenter3.png", alt: "foodcenter3.png" },
+  { src: "/gallery/foodcenter4.png", alt: "foodcenter4.png" },
+  { src: "/gallery/shop1.png", alt: "shop1.png" },
+  { src: "/gallery/shop11.jpeg", alt: "shop11.jpeg" },
+  { src: "/gallery/shop12.png", alt: "shop12.png" },
+  { src: "/gallery/shop2.png", alt: "shop2.png" },
+  { src: "/gallery/shop21.png", alt: "shop21.png" },
+  { src: "/gallery/shop3.jpeg", alt: "shop3.jpeg" },
+  { src: "/gallery/shop31.jpeg", alt: "shop31.jpeg" },
 ]
 
 export default function GalleryPage() {
@@ -114,7 +72,7 @@ export default function GalleryPage() {
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src={image.src || "/placeholder.svg"}
+                    src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     loading="lazy"
@@ -125,7 +83,6 @@ export default function GalleryPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-4">
                     <h3 className="text-white font-semibold text-lg mb-1">{image.alt}</h3>
-                    <p className="text-white/80 text-sm line-clamp-2">{image.caption}</p>
                   </div>
                 </div>
 

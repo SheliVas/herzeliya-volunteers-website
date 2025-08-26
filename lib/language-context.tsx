@@ -363,7 +363,7 @@ const translations = {
     "home.shops.subtitle": "בקרו בשלוש חנויות היד השנייה שלנו ברחבי הרצליה - כל רכישה תומכת בתוכניות הקהילה שלנו",
     "home.shops.callManager": "התקשרו למנהל\\ת",
     "home.shops.openingHours": "שעות פתיחה",
-    "home.shops.manager": "מנהלת",
+    "home.shops.manager": "מנהל\\ת",
     "home.shops.mainItems": "פריטים עיקריים",
   "home.shops.herzliya1.title": "חת\"ם סופר 29 הרצליה",
   "home.shops.herzliya1.hours": "א-ה 08:00-13:00\nג 16:00-19:00",

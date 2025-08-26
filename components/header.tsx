@@ -11,7 +11,6 @@ import { usePathname } from "next/navigation"
 const navigationKeys = [
   { href: "/", key: "nav.home" },
   { href: "#about", key: "nav.about" },
-  { href: "#programs", key: "nav.programs" },
   { href: "/gallery", key: "nav.gallery" },
   { href: "#get-involved", key: "nav.getInvolved" },
   { href: "#contact", key: "nav.contact" },
@@ -93,7 +92,11 @@ export function Header() {
                   onClick={(e) => {
                     if (link.href.startsWith("#")) {
                       e.preventDefault()
-                      handleNavClick(link.href)
+                      if (pathname === "/") {
+                        handleNavClick(link.href)
+                      } else {
+                        window.location.href = `/${link.href}`
+                      }
                     }
                   }}
                   className={`text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 hover:scale-105 ${
