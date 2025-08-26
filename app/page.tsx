@@ -2,14 +2,13 @@
 
 import { useLanguage } from "@/lib/language-context"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
 import { VolunteerForm } from "@/components/volunteer-form"
 import { AnimatedSection } from "@/components/animated-section"
 import { ParallaxVideoHero } from "@/components/parallax-video-hero"
 import { ParallaxHero } from "@/components/parallax-hero"
 import { TestimonialCarousel } from "@/components/testimonial-carousel"
-import { InteractiveTimeline } from "@/components/interactive-timeline"
 
 export default function HomePage() {
   const { t } = useLanguage()
@@ -68,254 +67,125 @@ export default function HomePage() {
             </div>
           </AnimatedSection>
 
-          {/* Mission Statement */}
-          <AnimatedSection animation="fade-up" delay={100}>
-            <div className="max-w-4xl mx-auto mb-16">
-              <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/5">
-                <CardHeader className="text-center">
-                  <CardTitle className="text-2xl text-primary">{t("home.about.mission.title")}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-lg text-muted-foreground leading-relaxed text-center">
-                    {t("home.about.mission.description")}
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </AnimatedSection>
-
-          {/* How We Work operations section with video backgrounds */}
+          {/* Operational Rectangles */}
           <div className="mb-16">
             <AnimatedSection animation="fade-up">
-              <div className="text-center mb-12">
-                <h3 className="text-2xl lg:text-3xl font-bold text-primary mb-4">{t("home.about.operations.title")}</h3>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{t("home.about.operations.subtitle")}</p>
-              </div>
+              <h3 className="text-2xl font-bold text-primary text-center mb-8">{t("home.about.operations.title")}</h3>
             </AnimatedSection>
-
-            <div className="grid lg:grid-cols-2 gap-8 mb-12">
-              {/* Warehouse Operations with Video Background */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+              {/* Thrift Shops - top left */}
               <AnimatedSection animation="slide-right" delay={100}>
-                <div className="relative overflow-hidden rounded-xl">
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover opacity-20"
-                  >
-                    <source src="/warehouse-video.mp4" type="video/mp4" />
-                  </video>
-                  <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm border border-primary/20 p-8 h-full">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-4">
-                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <Card className="group relative overflow-hidden border-secondary/20 hover:border-secondary/60 transition-all duration-300 hover:scale-105 hover:shadow-xl bg-gradient-to-br from-secondary/5 to-secondary/10 hover:from-secondary/10 hover:to-secondary/20">
+                  <CardHeader>
+                    {/* Video space for thrift shop */}
+                    <div className="w-full h-32 mb-4 rounded-lg bg-secondary/10 border-2 border-dashed border-secondary/30 flex items-center justify-center">
+                      <div className="text-center">
+                        <svg
+                          className="w-8 h-8 text-secondary/60 mx-auto mb-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
                             strokeWidth={2}
-                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                            d="M16 11V7a4 4 0 00-8 0v4M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
                           />
                         </svg>
-                      </div>
-                      <h4 className="text-xl font-bold text-primary">{t("home.about.warehouse.title")}</h4>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed">{t("home.about.warehouse.description")}</p>
-                  </div>
-                </div>
-              </AnimatedSection>
-
-              {/* Thrift Shops with Video Background */}
-              <AnimatedSection animation="slide-left" delay={200}>
-                <div className="relative overflow-hidden rounded-xl">
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover opacity-20"
-                  >
-                    <source src="/shop-video.mp4" type="video/mp4" />
-                  </video>
-                  <div className="relative bg-gradient-to-br from-secondary/10 to-secondary/5 backdrop-blur-sm border border-secondary/20 p-8 h-full">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mr-4">
-                        <svg className="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                          />
-                        </svg>
-                      </div>
-                      <h4 className="text-xl font-bold text-secondary">{t("home.about.shops.title")}</h4>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed">{t("home.about.shops.description")}</p>
-                  </div>
-                </div>
-              </AnimatedSection>
-            </div>
-
-            {/* Financial Support */}
-            <AnimatedSection animation="fade-up" delay={300}>
-              <div className="max-w-4xl mx-auto">
-                <Card className="border-accent/20 bg-gradient-to-br from-accent/5 to-accent/10">
-                  <CardHeader className="text-center">
-                    <div className="flex items-center justify-center mb-4">
-                      <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
-                        <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
-                          />
-                        </svg>
+                        <p className="text-xs text-secondary/60">Thrift Shop Video</p>
                       </div>
                     </div>
-                    <CardTitle className="text-xl text-accent">{t("home.about.donations.title")}</CardTitle>
+                    <CardTitle className="text-secondary group-hover:text-secondary/90 transition-colors mb-2">
+                      {t("home.about.shops.title")}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground leading-relaxed text-center">
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
+                      {t("home.about.shops.description")}
+                    </p>
+                  </CardContent>
+                </Card>
+              </AnimatedSection>
+
+              <AnimatedSection animation="slide-left" delay={200}>
+                <Card className="group relative overflow-hidden border-accent/20 hover:border-accent/60 transition-all duration-300 hover:scale-105 hover:shadow-xl bg-gradient-to-br from-accent/5 to-accent/10 hover:from-accent/10 hover:to-accent/20">
+                  <CardHeader>
+                    <CardTitle className="text-accent group-hover:text-accent/90 transition-colors mb-2">
+                      {t("home.about.donations.title")}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors text-sm">
                       {t("home.about.donations.description")}
                     </p>
                   </CardContent>
                 </Card>
-              </div>
-            </AnimatedSection>
+              </AnimatedSection>
 
-            {/* Distribution System */}
-            <AnimatedSection animation="fade-up" delay={400}>
-              <div className="max-w-4xl mx-auto mt-8">
-                <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10">
-                  <CardHeader className="text-center">
-                    <div className="flex items-center justify-center mb-4">
-                      <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <CardTitle className="text-xl text-primary">{t("home.about.distribution.title")}</CardTitle>
+              <AnimatedSection animation="slide-up" delay={300}>
+                <Card className="group relative overflow-hidden border-primary/20 hover:border-primary/60 transition-all duration-300 hover:scale-105 hover:shadow-xl bg-gradient-to-br from-primary/5 to-accent/5 hover:from-primary/10 hover:to-accent/10">
+                  <CardHeader>
+                    <CardTitle className="text-primary group-hover:text-primary/90 transition-colors mb-2">
+                      {t("home.about.distribution.title")}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground leading-relaxed text-center">
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors text-sm">
                       {t("home.about.distribution.description")}
                     </p>
                   </CardContent>
                 </Card>
-              </div>
-            </AnimatedSection>
-          </div>
+              </AnimatedSection>
 
-          {/* Core Values */}
-          <div className="mb-16">
-            <AnimatedSection animation="fade-up">
-              <h3 className="text-2xl font-bold text-primary text-center mb-8">{t("home.about.values.title")}</h3>
-            </AnimatedSection>
-            <div className="grid md:grid-cols-3 gap-6">
-              <AnimatedSection animation="slide-left" delay={100}>
-                <Card className="text-center border-primary/20 hover:border-primary/40 transition-colors">
+              <AnimatedSection animation="fade-up" delay={400}>
+                <Card className="group relative overflow-hidden border-primary/20 hover:border-primary/60 transition-all duration-300 hover:scale-105 hover:shadow-xl bg-gradient-to-br from-primary/5 to-primary/10 hover:from-primary/10 hover:to-primary/20">
                   <CardHeader>
-                    <CardTitle className="text-primary">{t("home.about.values.compassion")}</CardTitle>
+                    {/* Video space for warehouse */}
+                    <div className="w-full h-32 mb-4 rounded-lg bg-primary/10 border-2 border-dashed border-primary/30 flex items-center justify-center">
+                      <div className="text-center">
+                        <svg
+                          className="w-8 h-8 text-primary/60 mx-auto mb-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                          />
+                        </svg>
+                        <p className="text-xs text-primary/60">Warehouse Video</p>
+                      </div>
+                    </div>
+                    <CardTitle className="text-primary group-hover:text-primary/90 transition-colors mb-2">
+                      {t("home.about.warehouse.title")}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">{t("home.about.values.compassion.desc")}</p>
-                  </CardContent>
-                </Card>
-              </AnimatedSection>
-              <AnimatedSection animation="fade-up" delay={200}>
-                <Card className="text-center border-secondary/20 hover:border-secondary/40 transition-colors">
-                  <CardHeader>
-                    <CardTitle className="text-secondary">{t("home.about.values.integrity")}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{t("home.about.values.integrity.desc")}</p>
-                  </CardContent>
-                </Card>
-              </AnimatedSection>
-              <AnimatedSection animation="slide-right" delay={300}>
-                <Card className="text-center border-accent/20 hover:border-accent/40 transition-colors">
-                  <CardHeader>
-                    <CardTitle className="text-accent">{t("home.about.values.community")}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{t("home.about.values.community.desc")}</p>
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
+                      {t("home.about.warehouse.description")}
+                    </p>
                   </CardContent>
                 </Card>
               </AnimatedSection>
             </div>
           </div>
-
-          {/* Milestones Timeline */}
-          <div>
-            <AnimatedSection animation="fade-up">
-              <h3 className="text-2xl font-bold text-primary text-center mb-8">{t("home.about.milestones.title")}</h3>
-            </AnimatedSection>
-            <AnimatedSection animation="fade-up" delay={100}>
-              <InteractiveTimeline
-                events={[
-                  {
-                    year: "2016",
-                    title: t("home.about.milestones.2016.title") || "Foundation Established",
-                    description: t("home.about.milestones.2016"),
-                    color: "primary",
-                    details:
-                      "Started with just 5 volunteers and a vision to make Herzeliya a better place for everyone.",
-                  },
-                  {
-                    year: "2018",
-                    title: t("home.about.milestones.2018.title") || "First Major Program",
-                    description: t("home.about.milestones.2018"),
-                    color: "secondary",
-                    details: "Launched our elderly support program, serving over 50 seniors in the community.",
-                  },
-                  {
-                    year: "2020",
-                    title: t("home.about.milestones.2020.title") || "Pandemic Response",
-                    description: t("home.about.milestones.2020"),
-                    color: "accent",
-                    details:
-                      "Adapted our services during COVID-19, providing essential support to vulnerable community members.",
-                  },
-                  {
-                    year: "2022",
-                    title: t("home.about.milestones.2022.title") || "Youth Programs Launch",
-                    description: t("home.about.milestones.2022"),
-                    color: "primary",
-                    details:
-                      "Expanded to include youth mentorship and environmental programs, reaching over 200 young people.",
-                  },
-                  {
-                    year: "2024",
-                    title: t("home.about.milestones.2024.title") || "Community Recognition",
-                    description: t("home.about.milestones.2024"),
-                    color: "secondary",
-                    details: "Received the Herzeliya Community Excellence Award for outstanding volunteer service.",
-                  },
-                ]}
-              />
-            </AnimatedSection>
-          </div>
         </div>
       </section>
 
-      {/* Programs Section */}
+      {/* Shops Section */}
       <ParallaxHero backgroundImage="/mentor-student-learning.png" className="py-16" speed={0.4}>
-        <section id="programs" className="relative">
+        <section id="shops" className="relative">
           <div className="container mx-auto px-4">
             <AnimatedSection animation="fade-up">
               <div className="text-center mb-12">
                 <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 drop-shadow-lg">
-                  {t("home.programs.title")}
+                  {t("home.shops.title")}
                 </h2>
-                <p className="text-lg text-white/90 max-w-2xl mx-auto drop-shadow-md">{t("home.programs.subtitle")}</p>
+                <p className="text-lg text-white/90 max-w-2xl mx-auto drop-shadow-md">{t("home.shops.subtitle")}</p>
               </div>
             </AnimatedSection>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -324,23 +194,30 @@ export default function HomePage() {
                   <CardHeader>
                     <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
                       <img
-                        src="/elderly-volunteer-smile.png"
-                        alt="Senior support program"
+                        src="/placeholder.svg?height=200&width=300"
+                        alt="Herzeliya Center thrift store"
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <CardTitle className="text-primary">{t("home.programs.elderly.title")}</CardTitle>
+                    <CardTitle className="text-primary">{t("home.shops.herzliya1.title")}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <CardDescription className="mb-4 leading-relaxed">
-                      {t("home.programs.elderly.description")}
-                    </CardDescription>
-                    <Button
-                      asChild
-                      variant="outline"
-                      className="border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
-                    >
-                      <Link href="/programs">{t("home.programs.learnMore")}</Link>
+                  <CardContent className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-sm text-muted-foreground mb-1">
+                        {t("home.shops.openingHours")}
+                      </h4>
+                      <p className="text-sm">{t("home.shops.herzliya1.hours")}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.manager")}</h4>
+                      <p className="text-sm">{t("home.shops.herzliya1.manager")}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.mainItems")}</h4>
+                      <p className="text-sm leading-relaxed">{t("home.shops.herzliya1.items")}</p>
+                    </div>
+                    <Button asChild className="w-full bg-primary hover:bg-primary/90">
+                      <a href={`tel:${t("home.shops.herzliya1.phone")}`}>{t("home.shops.callManager")}</a>
                     </Button>
                   </CardContent>
                 </Card>
@@ -351,23 +228,30 @@ export default function HomePage() {
                   <CardHeader>
                     <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
                       <img
-                        src="/mentor-student-learning.png"
-                        alt="Youth mentorship program"
+                        src="/placeholder.svg?height=200&width=300"
+                        alt="Herzliya Pituach thrift store"
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <CardTitle className="text-secondary">{t("home.programs.youth.title")}</CardTitle>
+                    <CardTitle className="text-secondary">{t("home.shops.herzliya2.title")}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <CardDescription className="mb-4 leading-relaxed">
-                      {t("home.programs.youth.description")}
-                    </CardDescription>
-                    <Button
-                      asChild
-                      variant="outline"
-                      className="border-secondary text-secondary hover:bg-secondary hover:text-white bg-transparent"
-                    >
-                      <Link href="/programs">{t("home.programs.learnMore")}</Link>
+                  <CardContent className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-sm text-muted-foreground mb-1">
+                        {t("home.shops.openingHours")}
+                      </h4>
+                      <p className="text-sm">{t("home.shops.herzliya2.hours")}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.manager")}</h4>
+                      <p className="text-sm">{t("home.shops.herzliya2.manager")}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.mainItems")}</h4>
+                      <p className="text-sm leading-relaxed">{t("home.shops.herzliya2.items")}</p>
+                    </div>
+                    <Button asChild className="w-full bg-secondary hover:bg-secondary/90">
+                      <a href={`tel:${t("home.shops.herzliya2.phone")}`}>{t("home.shops.callManager")}</a>
                     </Button>
                   </CardContent>
                 </Card>
@@ -378,23 +262,30 @@ export default function HomePage() {
                   <CardHeader>
                     <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
                       <img
-                        src="/placeholder-xxpdb.png"
-                        alt="Environmental care program"
+                        src="/placeholder.svg?height=200&width=300"
+                        alt="Old Herzeliya thrift store"
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <CardTitle className="text-accent">{t("home.programs.environment.title")}</CardTitle>
+                    <CardTitle className="text-accent">{t("home.shops.herzliya3.title")}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <CardDescription className="mb-4 leading-relaxed">
-                      {t("home.programs.environment.description")}
-                    </CardDescription>
-                    <Button
-                      asChild
-                      variant="outline"
-                      className="border-accent text-accent hover:bg-accent hover:text-white bg-transparent"
-                    >
-                      <Link href="/programs">{t("home.programs.learnMore")}</Link>
+                  <CardContent className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-sm text-muted-foreground mb-1">
+                        {t("home.shops.openingHours")}
+                      </h4>
+                      <p className="text-sm">{t("home.shops.herzliya3.hours")}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.manager")}</h4>
+                      <p className="text-sm">{t("home.shops.herzliya3.manager")}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.mainItems")}</h4>
+                      <p className="text-sm leading-relaxed">{t("home.shops.herzliya3.items")}</p>
+                    </div>
+                    <Button asChild className="w-full bg-accent hover:bg-accent/90">
+                      <a href={`tel:${t("home.shops.herzliya3.phone")}`}>{t("home.shops.callManager")}</a>
                     </Button>
                   </CardContent>
                 </Card>
@@ -430,10 +321,73 @@ export default function HomePage() {
                     <CardTitle className="text-secondary">{t("home.getInvolved.donation.title")}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex flex-col justify-between h-full">
-                    <p className="text-muted-foreground leading-relaxed mb-6">
-                      {t("home.getInvolved.donation.description")}
-                    </p>
-                    <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 w-full">
+                    <div className="space-y-6">
+                      <p className="text-muted-foreground leading-relaxed">
+                        {t("home.getInvolved.donation.description")}
+                      </p>
+
+                      <div className="space-y-3">
+                        <div className="flex items-start gap-3">
+                          <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg
+                              className="w-3 h-3 text-secondary"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                          </div>
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            {t("home.getInvolved.donation.benefits.tax")}
+                          </p>
+                        </div>
+
+                        <div className="flex items-start gap-3">
+                          <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg
+                              className="w-3 h-3 text-secondary"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                              />
+                            </svg>
+                          </div>
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            {t("home.getInvolved.donation.benefits.secure")}
+                          </p>
+                        </div>
+
+                        <div className="flex items-start gap-3">
+                          <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg
+                              className="w-3 h-3 text-secondary"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                              />
+                            </svg>
+                          </div>
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            {t("home.getInvolved.donation.benefits.impact")}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 w-full mt-6">
                       <a
                         href="https://pay.tranzila.com/mitnadvim/ekpvdWF5bnp0QmhQazRHYWdwTmlaUT09"
                         rel="noopener noreferrer"
