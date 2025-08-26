@@ -174,20 +174,14 @@ export function VolunteerForm() {
                 <SelectValue />
               </SelectTrigger>
               <SelectContent className="transition-all duration-200">
-                <SelectItem value="elderly" className="transition-colors duration-200 hover:bg-primary/10">
-                  {t("home.getInvolved.form.area.elderly")}
+                <SelectItem value="shops" className="transition-colors duration-200 hover:bg-primary/10">
+                  {t("home.getInvolved.form.area.shops")}
                 </SelectItem>
-                <SelectItem value="youth" className="transition-colors duration-200 hover:bg-secondary/10">
-                  {t("home.getInvolved.form.area.youth")}
+                <SelectItem value="warehouse" className="transition-colors duration-200 hover:bg-secondary/10">
+                  {t("home.getInvolved.form.area.warehouse")}
                 </SelectItem>
-                <SelectItem value="environment" className="transition-colors duration-200 hover:bg-accent/10">
-                  {t("home.getInvolved.form.area.environment")}
-                </SelectItem>
-                <SelectItem value="events" className="transition-colors duration-200 hover:bg-primary/10">
-                  {t("home.getInvolved.form.area.events")}
-                </SelectItem>
-                <SelectItem value="admin" className="transition-colors duration-200 hover:bg-secondary/10">
-                  {t("home.getInvolved.form.area.admin")}
+                <SelectItem value="distribution" className="transition-colors duration-200 hover:bg-accent/10">
+                  {t("home.getInvolved.form.area.distribution")}
                 </SelectItem>
               </SelectContent>
             </Select>
@@ -197,7 +191,7 @@ export function VolunteerForm() {
           <div className="space-y-2">
             <Label className="transition-colors duration-200">{t("home.getInvolved.form.availability")}</Label>
             <div className="space-y-2">
-              {["weekdays", "weekends", "evenings", "flexible"].map((option) => (
+              {["sunday", "monday", "tuesday", "wednesday", "thursday", "flexible"].map((option) => (
                 <div
                   key={option}
                   className="flex items-center space-x-2 transition-all duration-200 hover:bg-accent/10 rounded p-1"
