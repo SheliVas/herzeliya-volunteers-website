@@ -59,8 +59,8 @@ export default function HomePage() {
       </ParallaxVideoHero>
 
       {/* About Us Section */}
-      <section id="about" className="py-16 bg-background">
-        <div className="container mx-auto px-4">
+      <section id="about" className="py-16 section-pattern-primary">
+        <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection animation="fade-up">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">{t("home.about.title")}</h2>
@@ -75,27 +75,10 @@ export default function HomePage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               {/* Thrift Shops - top left */}
               <AnimatedSection animation="slide-right" delay={100}>
-                <Card className="group relative overflow-hidden border-secondary/20 hover:border-secondary/60 transition-all duration-300 hover:scale-105 hover:shadow-xl bg-gradient-to-br from-secondary/5 to-secondary/10 hover:from-secondary/10 hover:to-secondary/20">
+                <Card className="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
                   <CardHeader>
                     {/* Video space for thrift shop */}
-                    <div className="w-full h-32 mb-4 rounded-lg bg-secondary/10 border-2 border-dashed border-secondary/30 flex items-center justify-center">
-                      <div className="text-center">
-                        <svg
-                          className="w-8 h-8 text-secondary/60 mx-auto mb-2"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M16 11V7a4 4 0 00-8 0v4M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
-                          />
-                        </svg>
-                        <p className="text-xs text-secondary/60">Thrift Shop Video</p>
-                      </div>
-                    </div>
+                    <div className="w-full h-32 mb-4 rounded-lg">{/* Video will be inserted here */}</div>
                     <CardTitle className="text-secondary group-hover:text-secondary/90 transition-colors mb-2">
                       {t("home.about.shops.title")}
                     </CardTitle>
@@ -109,7 +92,7 @@ export default function HomePage() {
               </AnimatedSection>
 
               <AnimatedSection animation="slide-left" delay={200}>
-                <Card className="group relative overflow-hidden border-accent/20 hover:border-accent/60 transition-all duration-300 hover:scale-105 hover:shadow-xl bg-gradient-to-br from-accent/5 to-accent/10 hover:from-accent/10 hover:to-accent/20">
+                <Card className="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
                   <CardHeader>
                     <CardTitle className="text-accent group-hover:text-accent/90 transition-colors mb-2">
                       {t("home.about.donations.title")}
@@ -124,7 +107,7 @@ export default function HomePage() {
               </AnimatedSection>
 
               <AnimatedSection animation="slide-up" delay={300}>
-                <Card className="group relative overflow-hidden border-primary/20 hover:border-primary/60 transition-all duration-300 hover:scale-105 hover:shadow-xl bg-gradient-to-br from-primary/5 to-accent/5 hover:from-primary/10 hover:to-accent/10">
+                <Card className="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
                   <CardHeader>
                     <CardTitle className="text-primary group-hover:text-primary/90 transition-colors mb-2">
                       {t("home.about.distribution.title")}
@@ -139,27 +122,10 @@ export default function HomePage() {
               </AnimatedSection>
 
               <AnimatedSection animation="fade-up" delay={400}>
-                <Card className="group relative overflow-hidden border-primary/20 hover:border-primary/60 transition-all duration-300 hover:scale-105 hover:shadow-xl bg-gradient-to-br from-primary/5 to-primary/10 hover:from-primary/10 hover:to-primary/20">
+                <Card className="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
                   <CardHeader>
                     {/* Video space for warehouse */}
-                    <div className="w-full h-32 mb-4 rounded-lg bg-primary/10 border-2 border-dashed border-primary/30 flex items-center justify-center">
-                      <div className="text-center">
-                        <svg
-                          className="w-8 h-8 text-primary/60 mx-auto mb-2"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
-                          />
-                        </svg>
-                        <p className="text-xs text-primary/60">Warehouse Video</p>
-                      </div>
-                    </div>
+                    <div className="w-full h-32 mb-4 rounded-lg">{/* Video will be inserted here */}</div>
                     <CardTitle className="text-primary group-hover:text-primary/90 transition-colors mb-2">
                       {t("home.about.warehouse.title")}
                     </CardTitle>
@@ -296,8 +262,8 @@ export default function HomePage() {
       </ParallaxHero>
 
       {/* Get Involved Section */}
-      <section id="get-involved" className="py-16 bg-background">
-        <div className="container mx-auto px-4">
+      <section id="get-involved" className="py-16 section-pattern-secondary floating-shapes">
+        <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection animation="fade-up">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">{t("home.getInvolved.title")}</h2>
@@ -316,7 +282,7 @@ export default function HomePage() {
             {/* Donation Section */}
             <AnimatedSection animation="slide-left" delay={200}>
               <div>
-                <Card className="border-secondary/20 h-full">
+                <Card className="border-secondary/20 h-full card-enhanced">
                   <CardHeader>
                     <CardTitle className="text-secondary">{t("home.getInvolved.donation.title")}</CardTitle>
                   </CardHeader>
@@ -435,8 +401,8 @@ export default function HomePage() {
       </section>
 
       {/* Contact Us Section */}
-      <section id="contact" className="py-16 bg-gradient-to-br from-primary/5 to-accent/5">
-        <div className="container mx-auto px-4">
+      <section id="contact" className="py-16 section-pattern-accent">
+        <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection animation="fade-up">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">{t("home.contact.title")}</h2>
@@ -448,7 +414,7 @@ export default function HomePage() {
             {/* Contact Information */}
             <AnimatedSection animation="slide-right" delay={100}>
               <div>
-                <Card className="border-primary/20 h-full">
+                <Card className="border-primary/20 h-full card-enhanced">
                   <CardHeader>
                     <CardTitle className="text-primary">{t("home.contact.info.title")}</CardTitle>
                   </CardHeader>
@@ -546,7 +512,7 @@ export default function HomePage() {
             {/* Map */}
             <AnimatedSection animation="slide-left" delay={200}>
               <div>
-                <Card className="border-secondary/20 h-full">
+                <Card className="border-secondary/20 h-full card-enhanced">
                   <CardHeader>
                     <CardTitle className="text-secondary">{t("home.contact.map.title")}</CardTitle>
                   </CardHeader>

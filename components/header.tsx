@@ -77,7 +77,7 @@ export function Header() {
               alt={t("site.title")}
               className="h-10 w-10 rounded-full object-cover"
             />
-            <span className="text-lg font-serif font-bold text-primary transition-colors duration-200">
+            <span className="text-xl font-serif font-bold text-primary transition-colors duration-200">
               {t("site.title")}
             </span>
           </Link>
