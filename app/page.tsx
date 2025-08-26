@@ -70,9 +70,6 @@ export default function HomePage() {
 
           {/* Operational Rectangles */}
           <div className="mb-16">
-            <AnimatedSection animation="fade-down">
-              <h3 className="text-2xl font-bold text-primary text-center mb-8">{t("home.about.operations.title")}</h3>
-            </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Thrift Shops - top left */}
               <AnimatedSection animation="slide-right" delay={100}>
@@ -293,7 +290,7 @@ export default function HomePage() {
           <div className="relative mb-12">
             <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-2xl -m-4"></div>
             <div className="relative z-10 p-4">
-              <AnimatedSection animation="fade-up">
+              <AnimatedSection animation="fade-down">
                 <div className="text-center">
                   <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 drop-shadow-lg">
                     {t("home.shops.title")}
@@ -304,7 +301,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <AnimatedSection animation="fade-up" delay={100}>
+          <AnimatedSection animation="fade-down" delay={100}>
             <ShopsCarousel
               shops={[
                 {
@@ -346,7 +343,7 @@ export default function HomePage() {
       {/* Get Involved Section */}
       <section id="get-involved" className="py-16 section-pattern-secondary floating-shapes">
         <div className="container mx-auto px-4 relative z-10">
-          <AnimatedSection animation="fade-up">
+          <AnimatedSection animation="fade-down">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">{t("home.getInvolved.title")}</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t("home.getInvolved.subtitle")}</p>
@@ -452,12 +449,12 @@ export default function HomePage() {
 
           {/* Testimonials */}
           <div>
-            <AnimatedSection animation="fade-up">
+            <AnimatedSection animation="fade-down">
               <h3 className="text-2xl font-bold text-primary text-center mb-8">
                 {t("home.getInvolved.testimonials.title")}
               </h3>
             </AnimatedSection>
-            <AnimatedSection animation="fade-up" delay={100}>
+            <AnimatedSection animation="fade-down" delay={100}>
               <TestimonialCarousel
                 testimonials={[
                   {
@@ -485,7 +482,7 @@ export default function HomePage() {
       {/* Contact Us Section */}
       <section id="contact" className="py-16 section-pattern-accent">
         <div className="container mx-auto px-4 relative z-10">
-          <AnimatedSection animation="fade-up">
+          <AnimatedSection animation="fade-down">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">{t("home.contact.title")}</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t("home.contact.subtitle")}</p>
