@@ -134,13 +134,13 @@ const translations = {
     "home.getInvolved.testimonials.title": "What Our Volunteers Say",
     "home.getInvolved.testimonials.sarah":
       "Volunteering with Herzeliya Volunteers has been incredibly rewarding. The senior support program has allowed me to make real connections and help where it's needed most.",
-    "home.getInvolved.testimonials.sarah.name": "Sarah M., Senior Support Volunteer",
+    "home.getInvolved.testimonials.sarah.name": "Noa, Shop Volunteer",
     "home.getInvolved.testimonials.david":
-      "Being a youth mentor has taught me as much as I've taught the kids. It's amazing to see young people grow and develop confidence through our programs.",
-    "home.getInvolved.testimonials.david.name": "David L., Youth Mentorship Volunteer",
+      "Working in the warehouse, I see firsthand how much effort goes into preparing food boxes for families in need. The teamwork and dedication of everyone here inspire me, and knowing that our work helps put food on the table for so many people is deeply fulfilling.",
+    "home.getInvolved.testimonials.david.name": "Eli, Warehouse Volunteer",
     "home.getInvolved.testimonials.rachel":
-      "The environmental care program gives me a chance to make a tangible difference in our community while working alongside like-minded people who care about our future.",
-    "home.getInvolved.testimonials.rachel.name": "Rachel K., Environmental Care Volunteer",
+      "As part of the distribution network, I get to deliver essential supplies directly to families across Herzliya. Meeting the recipients and hearing their stories motivates me to keep going. It’s heartwarming to know that our deliveries bring hope and support to those who need it most.",
+    "home.getInvolved.testimonials.rachel.name": "Maya, Distribution Volunteer",
     "home.contact.title": "Contact Us",
     "home.contact.subtitle": "Get in touch with us - we'd love to hear from you",
     "home.contact.info.title": "Get In Touch",
@@ -148,10 +148,10 @@ const translations = {
     "home.contact.phone": "Phone",
     "home.contact.address": "Address",
     "home.contact.hours": "Office Hours",
-    "home.contact.email.value": "info@herzeliyavolunteers.org",
-    "home.contact.phone.value": "+972-9-123-4567",
-    "home.contact.address.value": "123 Ben Gurion Street, Herzeliya, Israel 46733",
-    "home.contact.hours.value": "Sunday-Thursday: 9:00 AM - 5:00 PM",
+  "home.contact.email.value": "herzliyas.volunteers@gmail.com",
+  "home.contact.phone.value": "09-123-4567",
+  "home.contact.address.value": "49 Hanadiv St, Herzliya, 4648563",
+  "home.contact.hours.value": "Sunday-Thursday: 08:00-16:00\nFriday: 08:00-13:00",
     "home.contact.map.title": "Find Us",
     "gallery.title": "Our Community in Action",
     "gallery.subtitle":
@@ -317,13 +317,13 @@ const translations = {
     "home.getInvolved.testimonials.title": "מה המתנדבים שלנו אומרים",
     "home.getInvolved.testimonials.sarah":
       "התנדבות עם מתנדבי הרצליה הייתה מתגמלת מאוד. תוכנית התמיכה בקשישים אפשרה לי ליצור קשרים אמיתיים ולעזור במקום שבו זה הכי נחוץ.",
-    "home.getInvolved.testimonials.sarah.name": "שרה מ., מתנדבת תמיכה בקשישים",
+    "home.getInvolved.testimonials.sarah.name": "נועה, מתנדבת בחנות יד שנייה",
     "home.getInvolved.testimonials.david":
-      "להיות חונך נוער לימד אותי לא פחות ממה שלימדתי את הילדים. מדהים לראות צעירים גדלים ומפתחים ביטחון עצמי דרך התוכניות שלנו.",
-    "home.getInvolved.testimonials.david.name": "דוד ל., מתנדב חונכות נוער",
+      "העבודה במחסן מאפשרת לי לראות מקרוב כמה מאמץ מושקע באריזת חבילות מזון למשפחות נזקקות. שיתוף הפעולה והמסירות של כולם כאן מעוררי השראה, ולדעת שהעבודה שלנו עוזרת לשים אוכל על שולחן של כל כך הרבה אנשים זה מאוד מספק.",
+    "home.getInvolved.testimonials.david.name": "אלי, מתנדב במחסן",
     "home.getInvolved.testimonials.rachel":
-      "תוכנית השמירה על הסביבה נותנת לי הזדמנות לעשות הבדל מוחשי בקהילה שלנו תוך עבודה לצד אנשים בעלי דעות דומות שאכפת להם מהעתיד שלנו.",
-    "home.getInvolved.testimonials.rachel.name": "רחל כ., מתנדבת שמירה על הסביבה",
+      "כחלק מרשת החלוקה, אני זוכה להעביר מוצרים חיוניים ישירות למשפחות ברחבי הרצליה. לפגוש את המקבלים ולשמוע את הסיפורים שלהם נותן לי מוטיבציה להמשיך. זה מחמם את הלב לדעת שהמשלוחים שלנו מביאים תקווה ותמיכה למי שזקוק לה ביותר.",
+    "home.getInvolved.testimonials.rachel.name": "מאיה, מתנדבת ברשת החלוקה",
     "home.contact.title": "צור קשר",
     "home.contact.subtitle": "צרו איתנו קשר - נשמח לשמוע מכם",
     "home.contact.info.title": "יצירת קשר",
