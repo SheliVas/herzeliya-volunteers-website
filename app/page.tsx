@@ -72,12 +72,12 @@ export default function HomePage() {
             <AnimatedSection animation="fade-down">
               <h3 className="text-2xl font-bold text-primary text-center mb-8">{t("home.about.operations.title")}</h3>
             </AnimatedSection>
-            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Thrift Shops - top left */}
               <AnimatedSection animation="slide-right" delay={100}>
-                <Card className="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
-                  <CardHeader>
-                    <div className="w-full h-full mb-4 rounded-lg overflow-hidden">
+                <Card className="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100 h-full flex flex-col">
+                  <CardHeader className="flex-shrink-0">
+                    <div className="w-full h-56 mb-4 rounded-lg overflow-hidden">
                       <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
                         <source
                           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_6PT9B7a4ecS2rlmIW6oywde2QjCt/lasJciKx3z_Q-tOLEZQc7Q/public/thriftShop.mp4"
@@ -85,62 +85,189 @@ export default function HomePage() {
                         />
                       </video>
                     </div>
-                    <CardTitle className="text-secondary group-hover:text-secondary/90 transition-colors mb-2">
+                    <CardTitle className="text-secondary group-hover:text-secondary/90 transition-colors text-xl">
                       {t("home.about.shops.title")}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
+                  <CardContent className="flex-grow">
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors text-base">
                       {t("home.about.shops.description")}
                     </p>
                   </CardContent>
                 </Card>
               </AnimatedSection>
 
+              {/* Financial Support - top right */}
               <AnimatedSection animation="slide-left" delay={200}>
-                <Card className="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
-                  <CardHeader>
-                    <CardTitle className="text-accent group-hover:text-accent/90 transition-colors mb-2">
+                <Card className="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100 h-full flex flex-col">
+                  <CardHeader className="flex-shrink-0">
+                    <CardTitle className="text-accent group-hover:text-accent/90 transition-colors text-xl mb-4">
                       {t("home.about.donations.title")}
                     </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors text-sm">
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors text-base mb-6">
                       {t("home.about.donations.description")}
                     </p>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-4">
+                        <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                            />
+                          </svg>
+                        </div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {t("home.about.donations.points.community")}
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-4">
+                        <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                            />
+                          </svg>
+                        </div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {t("home.about.donations.points.groceries")}
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-4">
+                        <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                            />
+                          </svg>
+                        </div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {t("home.about.donations.points.thrift")}
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-4">
+                        <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                            />
+                          </svg>
+                        </div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {t("home.about.donations.points.impact")}
+                        </p>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </AnimatedSection>
 
+              {/* Distribution Network - bottom left */}
               <AnimatedSection animation="slide-right" delay={300}>
-                <Card className="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
-                  <CardHeader>
-                    <CardTitle className="text-primary group-hover:text-primary/90 transition-colors mb-2">
+                <Card className="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100 h-full flex flex-col">
+                  <CardHeader className="flex-shrink-0">
+                    <CardTitle className="text-primary group-hover:text-primary/90 transition-colors text-xl mb-4">
                       {t("home.about.distribution.title")}
                     </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors text-sm">
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors text-base mb-6">
                       {t("home.about.distribution.description")}
                     </p>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-4">
+                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                            />
+                          </svg>
+                        </div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {t("home.about.distribution.points.routes")}
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-4">
+                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                            />
+                          </svg>
+                        </div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {t("home.about.distribution.points.relationships")}
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-4">
+                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                            />
+                          </svg>
+                        </div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {t("home.about.distribution.points.expansion")}
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-4">
+                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                          </svg>
+                        </div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {t("home.about.distribution.points.reliability")}
+                        </p>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </AnimatedSection>
 
+              {/* Food Distribution Center - bottom right */}
               <AnimatedSection animation="slide-left" delay={400}>
-                <Card className="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
-                  <CardHeader>
-                    <div className="w-full h-full mb-4 rounded-lg overflow-hidden">
+                <Card className="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100 h-full flex flex-col">
+                  <CardHeader className="flex-shrink-0">
+                    <div className="w-full h-56 mb-4 rounded-lg overflow-hidden">
                       <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
                         <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_6PT9B7a4ecS2rlmIW6oywde2QjCt/3JisanrrHvtZJzT3Zm4hNQ/public/foodBoxPacking2.mp4" type="video/mp4" />
                       </video>
                     </div>
-                    <CardTitle className="text-primary group-hover:text-primary/90 transition-colors mb-2">
+                    <CardTitle className="text-primary group-hover:text-primary/90 transition-colors text-xl">
                       {t("home.about.warehouse.title")}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
+                  <CardContent className="flex-grow">
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors text-base">
                       {t("home.about.warehouse.description")}
                     </p>
                   </CardContent>
@@ -481,13 +608,7 @@ export default function HomePage() {
                             strokeLinecap="round"
                             strokeLinejoin="round"
                             strokeWidth={2}
-                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                          />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
                           />
                         </svg>
                       </div>
