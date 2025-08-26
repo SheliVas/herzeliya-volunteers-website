@@ -30,6 +30,35 @@ export function ShopsCarousel({ shops }: ShopsCarouselProps) {
   const [dragOffset, setDragOffset] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
 
+  const getColorClasses = (color: "primary" | "secondary" | "accent") => {
+    switch (color) {
+      case "primary":
+        return {
+          text: "text-primary",
+          bg: "bg-primary",
+          bgHover: "hover:bg-primary/90",
+          border: "border-primary/20",
+          dot: "bg-primary",
+        }
+      case "secondary":
+        return {
+          text: "text-secondary",
+          bg: "bg-secondary",
+          bgHover: "hover:bg-secondary/90",
+          border: "border-secondary/20",
+          dot: "bg-secondary",
+        }
+      case "accent":
+        return {
+          text: "text-accent",
+          bg: "bg-accent",
+          bgHover: "hover:bg-accent/90",
+          border: "border-accent/20",
+          dot: "bg-accent",
+        }
+    }
+  }
+
   const nextShop = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % shops.length)
   }
@@ -151,71 +180,79 @@ export function ShopsCarousel({ shops }: ShopsCarouselProps) {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        {shops.map((shop, index) => (
-          <div
-            key={shop.id}
-            className="absolute w-full max-w-md transition-all duration-700 ease-out"
-            style={getCardStyle(index)}
-            onClick={() => {
-              if (index !== currentIndex && !isDragging) {
-                handleInteraction()
-                goToShop(index)
-              }
-            }}
-          >
-            <Card
-              className={`hover:shadow-xl transition-all duration-700 border-${shop.color}/20 bg-white/95 backdrop-blur-sm transform hover:scale-105`}
+        {shops.map((shop, index) => {
+          const colorClasses = getColorClasses(shop.color)
+
+          return (
+            <div
+              key={shop.id}
+              className="absolute w-full max-w-md transition-all duration-700 ease-out"
+              style={getCardStyle(index)}
+              onClick={() => {
+                if (index !== currentIndex && !isDragging) {
+                  handleInteraction()
+                  goToShop(index)
+                }
+              }}
             >
-              <CardHeader>
-                <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
-                  <img
-                    src="/placeholder.svg?height=200&width=300"
-                    alt={t(shop.titleKey)}
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                    draggable={false}
-                  />
-                </div>
-                <CardTitle className={`text-${shop.color} text-xl`}>{t(shop.titleKey)}</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.openingHours")}</h4>
-                  <p className="text-sm">{t(shop.hoursKey)}</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.manager")}</h4>
-                  <p className="text-sm">{t(shop.managerKey)}</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.mainItems")}</h4>
-                  <p className="text-sm leading-relaxed">{t(shop.itemsKey)}</p>
-                </div>
-                <Button
-                  asChild
-                  className={`w-full bg-${shop.color} hover:bg-${shop.color}/90 transition-all duration-300`}
-                >
-                  <a href={`tel:${t(shop.phoneKey)}`}>{t("home.shops.callManager")}</a>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        ))}
+              <Card
+                className={`hover:shadow-xl transition-all duration-700 ${colorClasses.border} bg-white/95 backdrop-blur-sm transform hover:scale-105`}
+              >
+                <CardHeader>
+                  <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                    <img
+                      src="/placeholder.svg?height=200&width=300"
+                      alt={t(shop.titleKey)}
+                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                      draggable={false}
+                    />
+                  </div>
+                  <CardTitle className={`${colorClasses.text} text-xl`}>{t(shop.titleKey)}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.openingHours")}</h4>
+                    <p className="text-sm">{t(shop.hoursKey)}</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.manager")}</h4>
+                    <p className="text-sm">{t(shop.managerKey)}</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.mainItems")}</h4>
+                    <p className="text-sm leading-relaxed">{t(shop.itemsKey)}</p>
+                  </div>
+                  <Button
+                    asChild
+                    className={`w-full ${colorClasses.bg} ${colorClasses.bgHover} transition-all duration-300`}
+                  >
+                    <a href={`tel:${t(shop.phoneKey)}`}>{t("home.shops.callManager")}</a>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          )
+        })}
       </div>
 
       <div className="flex justify-center gap-3 mt-8">
-        {shops.map((shop, index) => (
-          <button
-            key={index}
-            className={`w-4 h-4 rounded-full transition-all duration-500 transform hover:scale-125 ${
-              index === currentIndex ? `bg-${shop.color} scale-125 shadow-lg` : "bg-gray-300 hover:bg-gray-400"
-            }`}
-            onClick={() => {
-              handleInteraction()
-              goToShop(index)
-            }}
-            aria-label={`Go to shop ${index + 1}`}
-          />
-        ))}
+        {shops.map((shop, index) => {
+          const colorClasses = getColorClasses(shop.color)
+
+          return (
+            <button
+              key={index}
+              className={`w-4 h-4 rounded-full transition-all duration-500 transform hover:scale-125 ${
+                index === currentIndex ? `${colorClasses.dot} scale-125 shadow-lg` : "bg-gray-300 hover:bg-gray-400"
+              }`}
+              onClick={() => {
+                handleInteraction()
+                goToShop(index)
+              }}
+              aria-label={`Go to shop ${index + 1}`}
+            />
+          )
+        })}
       </div>
     </div>
   )
