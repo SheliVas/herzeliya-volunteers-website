@@ -308,6 +308,7 @@ export default function HomePage() {
                   itemsKey: "home.shops.herzliya1.items",
                   phoneKey: "home.shops.herzliya1.phone",
                   color: "primary",
+                  image: "/shop1.jpg",
                 },
                 {
                   id: "herzliya2",
@@ -317,6 +318,7 @@ export default function HomePage() {
                   itemsKey: "home.shops.herzliya2.items",
                   phoneKey: "home.shops.herzliya2.phone",
                   color: "secondary",
+                  image: "/shop2.jpg",
                 },
                 {
                   id: "herzliya3",
@@ -326,6 +328,7 @@ export default function HomePage() {
                   itemsKey: "home.shops.herzliya3.items",
                   phoneKey: "home.shops.herzliya3.phone",
                   color: "accent",
+                  image: "/shop3.jpg",
                 },
               ]}
             />

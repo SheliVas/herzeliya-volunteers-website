@@ -15,6 +15,7 @@ interface Shop {
   itemsKey: string
   phoneKey: string
   color: "primary" | "secondary" | "accent"
+  image: string
 }
 
 interface ShopsCarouselProps {
@@ -196,12 +197,12 @@ export function ShopsCarousel({ shops }: ShopsCarouselProps) {
               }}
             >
               <Card
-                className={`hover:shadow-xl transition-all duration-700 ${colorClasses.border} bg-white/95 backdrop-blur-sm transform hover:scale-105`}
+                className={`hover:shadow-xl transition-all duration-700 ${colorClasses.border} bg-white/98 backdrop-blur-sm transform hover:scale-105`}
               >
                 <CardHeader>
                   <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
                     <img
-                      src="/placeholder.svg?height=200&width=300"
+                      src={shop.image}
                       alt={t(shop.titleKey)}
                       className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                       draggable={false}
@@ -242,9 +243,8 @@ export function ShopsCarousel({ shops }: ShopsCarouselProps) {
           return (
             <button
               key={index}
-              className={`w-4 h-4 rounded-full transition-all duration-500 transform hover:scale-125 ${
-                index === currentIndex ? `${colorClasses.dot} scale-125 shadow-lg` : "bg-gray-300 hover:bg-gray-400"
-              }`}
+              className={`w-4 h-4 rounded-full transition-all duration-500 transform hover:scale-125 ${index === currentIndex ? `${colorClasses.dot} scale-125 shadow-lg` : "bg-gray-300 hover:bg-gray-400"
+                }`}
               onClick={() => {
                 handleInteraction()
                 goToShop(index)
