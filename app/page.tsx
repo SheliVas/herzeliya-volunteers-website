@@ -577,7 +577,7 @@ export default function HomePage() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-primary mb-1">{t("home.contact.hours")}</h3>
-                        <p className="text-muted-foreground">{t("home.contact.hours.value")}</p>
+                        <p className="text-muted-foreground whitespace-pre-line">{t("home.contact.hours.value")}</p>
                       </div>
                     </div>
                   </CardContent>

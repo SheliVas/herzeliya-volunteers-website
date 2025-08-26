@@ -334,7 +334,7 @@ const translations = {
     "home.contact.email.value": "herzliyas.volunteers@gmail.com",
     "home.contact.phone.value": "09-123-4567",
     "home.contact.address.value": "הנדיב 49, הרצליה, 4648563",
-    "home.contact.hours.value": "ראשון-חמישי: 08:00-16:00 שישי: 08:00-13:00",
+  "home.contact.hours.value": "ראשון-חמישי: 08:00-16:00\nשישי: 08:00-13:00",
     "home.contact.map.title": "מצאו אותנו",
     "gallery.title": "הקהילה שלנו בפעולה",
     "gallery.subtitle":

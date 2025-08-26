@@ -213,7 +213,7 @@ export function ShopsCarousel({ shops }: ShopsCarouselProps) {
                 <CardContent className="space-y-4">
                   <div>
                     <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.openingHours")}</h4>
-                    <p className="text-sm">{t(shop.hoursKey)}</p>
+                    <p className="text-sm whitespace-pre-line">{t(shop.hoursKey)}</p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.manager")}</h4>
