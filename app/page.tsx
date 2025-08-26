@@ -7,7 +7,6 @@ import Link from "next/link"
 import { VolunteerForm } from "@/components/volunteer-form"
 import { AnimatedSection } from "@/components/animated-section"
 import { ParallaxVideoHero } from "@/components/parallax-video-hero"
-import { ParallaxHero } from "@/components/parallax-hero"
 import { TestimonialCarousel } from "@/components/testimonial-carousel"
 import { ShopsCarousel } from "@/components/shops-carousel"
 
@@ -260,7 +259,10 @@ export default function HomePage() {
                   <CardHeader className="flex-shrink-0">
                     <div className="w-full h-56 mb-4 rounded-lg overflow-hidden">
                       <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
-                        <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_6PT9B7a4ecS2rlmIW6oywde2QjCt/3JisanrrHvtZJzT3Zm4hNQ/public/foodBoxPacking2.mp4" type="video/mp4" />
+                        <source
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_6PT9B7a4ecS2rlmIW6oywde2QjCt/3JisanrrHvtZJzT3Zm4hNQ/public/foodBoxPacking2.mp4"
+                          type="video/mp4"
+                        />
                       </video>
                     </div>
                     <CardTitle className="text-primary group-hover:text-primary/90 transition-colors text-xl">
@@ -281,57 +283,53 @@ export default function HomePage() {
 
       {/* Shops Section */}
       <ParallaxVideoHero
-        backgroundVideo="/public/clothingBoxPacking2.mp4"
+        backgroundVideo="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_6PT9B7a4ecS2rlmIW6oywde2QjCt/lasJciKx3z_Q-tOLEZQc7Q/publichttps://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_6PT9B7a4ecS2rlmIW6oywde2QjCt/r6NLBlG2w3nK108M-Kej0k/public/clothingBoxPacking2.mp4"
         className="py-20 lg:py-32 min-h-[80vh] flex items-center"
         speed={0.3}
       >
-        <section id="shops" className="relative">
-          <div className="container mx-auto px-4">
-            <AnimatedSection animation="fade-up">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 drop-shadow-lg">
-                  {t("home.shops.title")}
-                </h2>
-                <p className="text-lg text-white/90 max-w-2xl mx-auto drop-shadow-md">{t("home.shops.subtitle")}</p>
-              </div>
-            </AnimatedSection>
+        <div className="container mx-auto px-4">
+          <AnimatedSection animation="fade-up">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 drop-shadow-lg">{t("home.shops.title")}</h2>
+              <p className="text-lg text-white/90 max-w-2xl mx-auto drop-shadow-md">{t("home.shops.subtitle")}</p>
+            </div>
+          </AnimatedSection>
 
-            <AnimatedSection animation="fade-up" delay={100}>
-              <ShopsCarousel
-                shops={[
-                  {
-                    id: "herzliya1",
-                    titleKey: "home.shops.herzliya1.title",
-                    hoursKey: "home.shops.herzliya1.hours",
-                    managerKey: "home.shops.herzliya1.manager",
-                    itemsKey: "home.shops.herzliya1.items",
-                    phoneKey: "home.shops.herzliya1.phone",
-                    color: "primary",
-                  },
-                  {
-                    id: "herzliya2",
-                    titleKey: "home.shops.herzliya2.title",
-                    hoursKey: "home.shops.herzliya2.hours",
-                    managerKey: "home.shops.herzliya2.manager",
-                    itemsKey: "home.shops.herzliya2.items",
-                    phoneKey: "home.shops.herzliya2.phone",
-                    color: "secondary",
-                  },
-                  {
-                    id: "herzliya3",
-                    titleKey: "home.shops.herzliya3.title",
-                    hoursKey: "home.shops.herzliya3.hours",
-                    managerKey: "home.shops.herzliya3.manager",
-                    itemsKey: "home.shops.herzliya3.items",
-                    phoneKey: "home.shops.herzliya3.phone",
-                    color: "accent",
-                  },
-                ]}
-              />
-            </AnimatedSection>
-          </div>
-        </section>
-  </ParallaxVideoHero>
+          <AnimatedSection animation="fade-up" delay={100}>
+            <ShopsCarousel
+              shops={[
+                {
+                  id: "herzliya1",
+                  titleKey: "home.shops.herzliya1.title",
+                  hoursKey: "home.shops.herzliya1.hours",
+                  managerKey: "home.shops.herzliya1.manager",
+                  itemsKey: "home.shops.herzliya1.items",
+                  phoneKey: "home.shops.herzliya1.phone",
+                  color: "primary",
+                },
+                {
+                  id: "herzliya2",
+                  titleKey: "home.shops.herzliya2.title",
+                  hoursKey: "home.shops.herzliya2.hours",
+                  managerKey: "home.shops.herzliya2.manager",
+                  itemsKey: "home.shops.herzliya2.items",
+                  phoneKey: "home.shops.herzliya2.phone",
+                  color: "secondary",
+                },
+                {
+                  id: "herzliya3",
+                  titleKey: "home.shops.herzliya3.title",
+                  hoursKey: "home.shops.herzliya3.hours",
+                  managerKey: "home.shops.herzliya3.manager",
+                  itemsKey: "home.shops.herzliya3.items",
+                  phoneKey: "home.shops.herzliya3.phone",
+                  color: "accent",
+                },
+              ]}
+            />
+          </AnimatedSection>
+        </div>
+      </ParallaxVideoHero>
 
       {/* Get Involved Section */}
       <section id="get-involved" className="py-16 section-pattern-secondary floating-shapes">
