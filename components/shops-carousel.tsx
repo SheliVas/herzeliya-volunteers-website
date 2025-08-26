@@ -208,20 +208,20 @@ export function ShopsCarousel({ shops }: ShopsCarouselProps) {
                       draggable={false}
                     />
                   </div>
-                  <CardTitle className={`${colorClasses.text} text-xl`}>{t(shop.titleKey)}</CardTitle>
+              <CardTitle className={`${colorClasses.text} text-xl`}>{t(shop.titleKey)}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
                     <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.openingHours")}</h4>
-                    <p className="text-sm whitespace-pre-line">{t(shop.hoursKey)}</p>
+                      <p className="text-sm whitespace-pre-line text-center">{t(shop.hoursKey)}</p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.manager")}</h4>
-                    <p className="text-sm">{t(shop.managerKey)}</p>
+                      <p className="text-sm text-center">{t(shop.managerKey)}</p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.mainItems")}</h4>
-                    <p className="text-sm leading-relaxed">{t(shop.itemsKey)}</p>
+                      <p className="text-sm leading-relaxed text-center">{t(shop.itemsKey)}</p>
                   </div>
                   <Button
                     asChild

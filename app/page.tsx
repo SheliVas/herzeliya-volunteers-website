@@ -83,12 +83,12 @@ export default function HomePage() {
                         />
                       </video>
                     </div>
-                    <CardTitle className="text-secondary group-hover:text-secondary/90 transition-colors text-xl">
+                    <CardTitle className="text-secondary group-hover:text-secondary/90 transition-colors text-xl text-center">
                       {t("home.about.shops.title")}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
-                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors text-base">
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors text-base text-center">
                       {t("home.about.shops.description")}
                     </p>
                   </CardContent>
@@ -99,17 +99,17 @@ export default function HomePage() {
               <AnimatedSection animation="slide-left" delay={200}>
                 <Card className="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100 h-full flex flex-col">
                   <CardHeader className="flex-shrink-0">
-                    <CardTitle className="text-accent group-hover:text-accent/90 transition-colors text-xl mb-4">
+                    <CardTitle className="text-accent group-hover:text-accent/90 transition-colors text-xl mb-1 text-center">
                       {t("home.about.donations.title")}
                     </CardTitle>
-                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors text-base mb-6">
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors text-base mb-1 text-center">
                       {t("home.about.donations.description")}
                     </p>
                   </CardHeader>
                   <CardContent className="flex-grow">
                     <div className="space-y-4">
-                      <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="flex items-center gap-4 mx-auto">
+                        <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
                           <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path
                               strokeLinecap="round"
@@ -119,12 +119,12 @@ export default function HomePage() {
                             />
                           </svg>
                         </div>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-muted-foreground leading-relaxed text-center">
                           {t("home.about.donations.points.community")}
                         </p>
                       </div>
-                      <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="flex items-center gap-4 mx-auto">
+                        <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
                           <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path
                               strokeLinecap="round"
@@ -134,12 +134,12 @@ export default function HomePage() {
                             />
                           </svg>
                         </div>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-muted-foreground leading-relaxed text-center">
                           {t("home.about.donations.points.groceries")}
                         </p>
                       </div>
-                      <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="flex items-center gap-4 mx-auto">
+                        <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
                           <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path
                               strokeLinecap="round"
@@ -149,12 +149,12 @@ export default function HomePage() {
                             />
                           </svg>
                         </div>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-muted-foreground leading-relaxed text-center">
                           {t("home.about.donations.points.thrift")}
                         </p>
                       </div>
-                      <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="flex items-center gap-4 mx-auto">
+                        <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
                           <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path
                               strokeLinecap="round"
@@ -164,7 +164,7 @@ export default function HomePage() {
                             />
                           </svg>
                         </div>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-muted-foreground leading-relaxed text-center">
                           {t("home.about.donations.points.impact")}
                         </p>
                       </div>
@@ -177,17 +177,17 @@ export default function HomePage() {
               <AnimatedSection animation="slide-right" delay={300}>
                 <Card className="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100 h-full flex flex-col">
                   <CardHeader className="flex-shrink-0">
-                    <CardTitle className="text-primary group-hover:text-primary/90 transition-colors text-xl mb-4">
+                    <CardTitle className="text-primary group-hover:text-primary/90 transition-colors text-xl mb-1 text-center">
                       {t("home.about.distribution.title")}
                     </CardTitle>
-                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors text-base mb-6">
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors text-base mb-1 text-center">
                       {t("home.about.distribution.description")}
                     </p>
                   </CardHeader>
                   <CardContent className="flex-grow">
                     <div className="space-y-4">
-                      <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="flex items-center gap-4 mx-auto">
+                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
                           <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path
                               strokeLinecap="round"
@@ -197,12 +197,12 @@ export default function HomePage() {
                             />
                           </svg>
                         </div>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-muted-foreground leading-relaxed text-center">
                           {t("home.about.distribution.points.routes")}
                         </p>
                       </div>
-                      <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="flex items-center gap-4 mx-auto">
+                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
                           <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path
                               strokeLinecap="round"
@@ -212,12 +212,12 @@ export default function HomePage() {
                             />
                           </svg>
                         </div>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-muted-foreground leading-relaxed text-center">
                           {t("home.about.distribution.points.relationships")}
                         </p>
                       </div>
-                      <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="flex items-center gap-4 mx-auto">
+                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
                           <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path
                               strokeLinecap="round"
@@ -227,12 +227,12 @@ export default function HomePage() {
                             />
                           </svg>
                         </div>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-muted-foreground leading-relaxed text-center">
                           {t("home.about.distribution.points.expansion")}
                         </p>
                       </div>
-                      <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="flex items-center gap-4 mx-auto">
+                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
                           <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path
                               strokeLinecap="round"
@@ -242,7 +242,7 @@ export default function HomePage() {
                             />
                           </svg>
                         </div>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-muted-foreground leading-relaxed text-center">
                           {t("home.about.distribution.points.reliability")}
                         </p>
                       </div>
@@ -263,12 +263,12 @@ export default function HomePage() {
                         />
                       </video>
                     </div>
-                    <CardTitle className="text-primary group-hover:text-primary/90 transition-colors text-xl">
+                    <CardTitle className="text-primary group-hover:text-primary/90 transition-colors text-xl text-center">
                       {t("home.about.warehouse.title")}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
-                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors text-base">
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors text-base text-center">
                       {t("home.about.warehouse.description")}
                     </p>
                   </CardContent>

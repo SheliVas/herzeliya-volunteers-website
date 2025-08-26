@@ -33,7 +33,7 @@ export function VolunteerForm() {
     name: "",
     email: "",
     phone: "",
-    area: "",
+  area: "warehouse",
     availability: [],
   })
   const [errors, setErrors] = useState<FormErrors>({})
@@ -199,7 +199,7 @@ export function VolunteerForm() {
                   <Checkbox
                     id={option}
                     checked={formData.availability.includes(option)}
-                    onCheckedChange={(checked) => handleAvailabilityChange(option, checked as boolean)}
+                    onCheckedChange={(checked: boolean) => handleAvailabilityChange(option, checked)}
                     className="transition-all duration-200 hover:scale-110"
                   />
                   <Label htmlFor={option} className="text-sm transition-colors duration-200 cursor-pointer">
