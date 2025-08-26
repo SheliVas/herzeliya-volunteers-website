@@ -19,6 +19,7 @@ export default function HomePage() {
         backgroundVideo="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_6PT9B7a4ecS2rlmIW6oywde2QjCt/1nAESb6KwFhg73onqcEkor/public/foodClothingPacking.mp4"
         className="py-20 lg:py-32 min-h-[80vh] flex items-center"
         speed={0.3}
+        overlay={<div className="absolute inset-0 bg-blue-950/80" />}
       >
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -282,12 +283,13 @@ export default function HomePage() {
       </section>
 
       {/* Shops Section */}
-      <ParallaxVideoHero
-        backgroundVideo="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_6PT9B7a4ecS2rlmIW6oywde2QjCt/lasJciKx3z_Q-tOLEZQc7Q/publichttps://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_6PT9B7a4ecS2rlmIW6oywde2QjCt/r6NLBlG2w3nK108M-Kej0k/public/clothingBoxPacking2.mp4"
-        className="py-20 lg:py-32 min-h-[80vh] flex items-center"
-        speed={0.3}
-      >
         <div className="container mx-auto px-4">
+          <ParallaxVideoHero
+            backgroundVideo="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_6PT9B7a4ecS2rlmIW6oywde2QjCt/lasJciKx3z_Q-tOLEZQc7Q/publichttps://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_6PT9B7a4ecS2rlmIW6oywde2QjCt/r6NLBlG2w3nK108M-Kej0k/public/clothingBoxPacking2.mp4"
+            className="py-20 lg:py-32 min-h-[80vh] flex items-center"
+            speed={0.3}
+            overlay={<div className="absolute inset-0 bg-yellow-400/20" />}
+          >
           <AnimatedSection animation="fade-up">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 drop-shadow-lg">{t("home.shops.title")}</h2>
@@ -328,8 +330,8 @@ export default function HomePage() {
               ]}
             />
           </AnimatedSection>
+          </ParallaxVideoHero>
         </div>
-      </ParallaxVideoHero>
 
       {/* Get Involved Section */}
       <section id="get-involved" className="py-16 section-pattern-secondary floating-shapes">
