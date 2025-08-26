@@ -187,7 +187,7 @@ export function ShopsCarousel({ shops }: ShopsCarouselProps) {
             <div
               key={shop.id}
               className="absolute w-full max-w-md transition-all duration-700 ease-out"
-              style={getCardStyle(index)}
+              style={getCardStyle(index) as React.CSSProperties}
               onClick={() => {
                 if (index !== currentIndex && !isDragging) {
                   handleInteraction()

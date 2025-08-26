@@ -284,10 +284,10 @@ export default function HomePage() {
 
       {/* Shops Section */}
       <ParallaxVideoHero
-        backgroundVideo="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_6PT9B7a4ecS2rlmIW6oywde2QjCt/r6NLBlG2w3nK108M-Kej0k/public/clothingBoxPacking2.mp4"
-        className="py-20 lg:py-32 min-h-[80vh] flex items-center justify-center"
-        speed={0.3}
-        overlay={<div className="absolute inset-0 bg-yellow-200/20" />}
+  backgroundVideo="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_6PT9B7a4ecS2rlmIW6oywde2QjCt/r6NLBlG2w3nK108M-Kej0k/public/clothingBoxPacking2.mp4"
+  className="py-20 lg:py-32 min-h-[80vh] flex items-center justify-center"
+  speed={0}
+  overlay={<div className="absolute inset-0 bg-green-200/20" />}
       >
         <div className="container mx-auto px-4">
           <AnimatedSection animation="fade-up">

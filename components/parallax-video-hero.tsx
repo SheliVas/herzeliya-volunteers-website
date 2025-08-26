@@ -21,7 +21,7 @@ export function ParallaxVideoHero({ children, backgroundVideo, className = "", s
     <div className={`relative overflow-hidden ${className}`}>
       {/* Parallax Background */}
       <video
-        className="absolute inset-0 w-full h-[120%] object-cover block"
+        className="absolute inset-0 w-full h-full object-cover block"
         style={{
           transform,
           willChange: "transform",
