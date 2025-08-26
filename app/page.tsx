@@ -290,56 +290,56 @@ export default function HomePage() {
         overlay={<div className="absolute inset-0 bg-green-800/25" />}
       >
         <div className="container mx-auto px-4">
-          <div className="relative">
-            <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-2xl -m-8"></div>
-            <div className="relative z-10 p-8">
+          <div className="relative mb-12">
+            <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-2xl -m-4"></div>
+            <div className="relative z-10 p-4">
               <AnimatedSection animation="fade-up">
-                <div className="text-center mb-12">
+                <div className="text-center">
                   <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 drop-shadow-lg">
                     {t("home.shops.title")}
                   </h2>
                   <p className="text-lg text-white/90 max-w-2xl mx-auto drop-shadow-md">{t("home.shops.subtitle")}</p>
                 </div>
               </AnimatedSection>
-
-              <AnimatedSection animation="fade-up" delay={100}>
-                <ShopsCarousel
-                  shops={[
-                    {
-                      id: "herzliya1",
-                      titleKey: "home.shops.herzliya1.title",
-                      hoursKey: "home.shops.herzliya1.hours",
-                      managerKey: "home.shops.herzliya1.manager",
-                      itemsKey: "home.shops.herzliya1.items",
-                      phoneKey: "home.shops.herzliya1.phone",
-                      color: "primary",
-                      image: "/shop1.png",
-                    },
-                    {
-                      id: "herzliya2",
-                      titleKey: "home.shops.herzliya2.title",
-                      hoursKey: "home.shops.herzliya2.hours",
-                      managerKey: "home.shops.herzliya2.manager",
-                      itemsKey: "home.shops.herzliya2.items",
-                      phoneKey: "home.shops.herzliya2.phone",
-                      color: "secondary",
-                      image: "/shop2.png",
-                    },
-                    {
-                      id: "herzliya3",
-                      titleKey: "home.shops.herzliya3.title",
-                      hoursKey: "home.shops.herzliya3.hours",
-                      managerKey: "home.shops.herzliya3.manager",
-                      itemsKey: "home.shops.herzliya3.items",
-                      phoneKey: "home.shops.herzliya3.phone",
-                      color: "accent",
-                      image: "/shop3.jpeg",
-                    },
-                  ]}
-                />
-              </AnimatedSection>
             </div>
           </div>
+
+          <AnimatedSection animation="fade-up" delay={100}>
+            <ShopsCarousel
+              shops={[
+                {
+                  id: "herzliya1",
+                  titleKey: "home.shops.herzliya1.title",
+                  hoursKey: "home.shops.herzliya1.hours",
+                  managerKey: "home.shops.herzliya1.manager",
+                  itemsKey: "home.shops.herzliya1.items",
+                  phoneKey: "home.shops.herzliya1.phone",
+                  color: "primary",
+                  image: "/shop1.png",
+                },
+                {
+                  id: "herzliya2",
+                  titleKey: "home.shops.herzliya2.title",
+                  hoursKey: "home.shops.herzliya2.hours",
+                  managerKey: "home.shops.herzliya2.manager",
+                  itemsKey: "home.shops.herzliya2.items",
+                  phoneKey: "home.shops.herzliya2.phone",
+                  color: "secondary",
+                  image: "/shop2.png",
+                },
+                {
+                  id: "herzliya3",
+                  titleKey: "home.shops.herzliya3.title",
+                  hoursKey: "home.shops.herzliya3.hours",
+                  managerKey: "home.shops.herzliya3.manager",
+                  itemsKey: "home.shops.herzliya3.items",
+                  phoneKey: "home.shops.herzliya3.phone",
+                  color: "accent",
+                  image: "/shop3.jpeg",
+                },
+              ]}
+            />
+          </AnimatedSection>
         </div>
       </ParallaxVideoHero>
 
