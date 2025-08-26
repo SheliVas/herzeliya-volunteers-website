@@ -331,10 +331,10 @@ const translations = {
     "home.contact.phone": "טלפון",
     "home.contact.address": "כתובת",
     "home.contact.hours": "שעות פעילות",
-    "home.contact.email.value": "info@herzeliyavolunteers.org",
+    "home.contact.email.value": "herzliyas.volunteers@gmail.com",
     "home.contact.phone.value": "09-123-4567",
-    "home.contact.address.value": "רחוב בן גוריון 123, הרצליה, ישראל 46733",
-    "home.contact.hours.value": "ראשון-חמישי: 09:00-17:00",
+    "home.contact.address.value": "הנדיב 49, הרצליה, 4648563",
+    "home.contact.hours.value": "ראשון-חמישי: 08:00-16:00 שישי: 08:00-13:00",
     "home.contact.map.title": "מצאו אותנו",
     "gallery.title": "הקהילה שלנו בפעולה",
     "gallery.subtitle":
