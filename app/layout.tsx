@@ -5,6 +5,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { SkipLink } from "@/components/skip-link"
 import { LanguageProvider } from "@/lib/language-context"
+import Script from "next/script"
 import "./globals.css"
 
 const inter = Inter({
@@ -42,7 +43,13 @@ export default function RootLayout({
           </main>
           <Footer />
         </LanguageProvider>
-        {/* <Script src="https://website-widgets.pages.dev/dist/sienna.min.js" strategy="afterInteractive" /> */}
+        <Script
+          src="https://website-widgets.pages.dev/dist/sienna.min.js"
+          strategy="afterInteractive"
+          onError={(e) => {
+            console.warn("[v0] Accessibility widget failed to load:", e)
+          }}
+        />
       </body>
     </html>
   )
