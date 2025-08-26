@@ -69,9 +69,6 @@ export default function HomePage() {
 
           {/* Operational Rectangles */}
           <div className="mb-16">
-            <AnimatedSection animation="fade-down">
-              <h3 className="text-2xl font-bold text-primary text-center mb-8">{t("home.about.operations.title")}</h3>
-            </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Thrift Shops - top left */}
               <AnimatedSection animation="slide-right" delay={100}>
