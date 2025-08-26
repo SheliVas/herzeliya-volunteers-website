@@ -384,7 +384,7 @@ const translations = {
 }
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>("en")
+  const [language, setLanguage] = useState<Language>("he")
 
   useEffect(() => {
     // Update document direction and lang attribute
