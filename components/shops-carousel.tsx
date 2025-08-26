@@ -202,26 +202,36 @@ export function ShopsCarousel({ shops }: ShopsCarouselProps) {
                 <CardHeader>
                   <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
                     <img
-                      src={shop.image}
+                      src={shop.image || "/placeholder.svg"}
                       alt={t(shop.titleKey)}
                       className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                       draggable={false}
                     />
                   </div>
-              <CardTitle className={`${colorClasses.text} text-xl`}>{t(shop.titleKey)}</CardTitle>
+                  <CardTitle
+                    className={`${colorClasses.text} text-xl text-center flex justify-center items-center w-full`}
+                  >
+                    {t(shop.titleKey)}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.openingHours")}</h4>
-                      <p className="text-sm whitespace-pre-line text-center">{t(shop.hoursKey)}</p>
+                    <h4 className="font-semibold text-sm text-muted-foreground mb-1 text-center">
+                      {t("home.shops.openingHours")}
+                    </h4>
+                    <p className="text-sm whitespace-pre-line text-center">{t(shop.hoursKey)}</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.manager")}</h4>
-                      <p className="text-sm text-center">{t(shop.managerKey)}</p>
+                    <h4 className="font-semibold text-sm text-muted-foreground mb-1 text-center">
+                      {t("home.shops.manager")}
+                    </h4>
+                    <p className="text-sm text-center">{t(shop.managerKey)}</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.mainItems")}</h4>
-                      <p className="text-sm leading-relaxed text-center">{t(shop.itemsKey)}</p>
+                    <h4 className="font-semibold text-sm text-muted-foreground mb-1 text-center">
+                      {t("home.shops.mainItems")}
+                    </h4>
+                    <p className="text-sm leading-relaxed text-center">{t(shop.itemsKey)}</p>
                   </div>
                   <Button
                     asChild
@@ -243,8 +253,9 @@ export function ShopsCarousel({ shops }: ShopsCarouselProps) {
           return (
             <button
               key={index}
-              className={`w-4 h-4 rounded-full transition-all duration-500 transform hover:scale-125 ${index === currentIndex ? `${colorClasses.dot} scale-125 shadow-lg` : "bg-gray-300 hover:bg-gray-400"
-                }`}
+              className={`w-4 h-4 rounded-full transition-all duration-500 transform hover:scale-125 ${
+                index === currentIndex ? `${colorClasses.dot} scale-125 shadow-lg` : "bg-gray-300 hover:bg-gray-400"
+              }`}
               onClick={() => {
                 handleInteraction()
                 goToShop(index)
