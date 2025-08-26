@@ -155,7 +155,7 @@ export function ShopsCarousel({ shops }: ShopsCarouselProps) {
     const isVisible = Math.abs(position) <= 1
 
     const dragOffsetPercent = isDragging ? (dragOffset / window.innerWidth) * 200 : 0
-    const translateX = position * 85 + dragOffsetPercent
+    const translateX = position * 120 + dragOffsetPercent
 
     return {
       transform: `translateX(${translateX}%) scale(${isCenter ? 1 : 0.85})`,
@@ -168,10 +168,10 @@ export function ShopsCarousel({ shops }: ShopsCarouselProps) {
   }
 
   return (
-    <div className="relative w-full max-w-6xl mx-auto px-4">
+    <div className="relative w-full max-w-7xl mx-auto px-2">
       <div
         ref={containerRef}
-        className="relative h-[600px] flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing select-none"
+        className="relative h-[650px] flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing select-none"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
