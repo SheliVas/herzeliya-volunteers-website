@@ -73,7 +73,7 @@ export function Header() {
             aria-label={`${t("site.title")} - ${t("nav.home")}`}
           >
             <img
-              src="/herzeliya-volunteers-logo-blue-and-white.png"
+              src="/logo.png"
               alt={t("site.title")}
               className="h-10 w-10 rounded-full object-cover"
             />

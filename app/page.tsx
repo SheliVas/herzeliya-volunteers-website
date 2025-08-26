@@ -61,7 +61,7 @@ export default function HomePage() {
       {/* About Us Section */}
       <section id="about" className="py-16 section-pattern-primary">
         <div className="container mx-auto px-4 relative z-10">
-          <AnimatedSection animation="fade-up">
+          <AnimatedSection animation="fade-down">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">{t("home.about.title")}</h2>
             </div>
@@ -69,7 +69,7 @@ export default function HomePage() {
 
           {/* Operational Rectangles */}
           <div className="mb-16">
-            <AnimatedSection animation="fade-up">
+            <AnimatedSection animation="fade-down">
               <h3 className="text-2xl font-bold text-primary text-center mb-8">{t("home.about.operations.title")}</h3>
             </AnimatedSection>
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
@@ -106,7 +106,7 @@ export default function HomePage() {
                 </Card>
               </AnimatedSection>
 
-              <AnimatedSection animation="slide-up" delay={300}>
+              <AnimatedSection animation="slide-right" delay={300}>
                 <Card className="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
                   <CardHeader>
                     <CardTitle className="text-primary group-hover:text-primary/90 transition-colors mb-2">
@@ -121,7 +121,7 @@ export default function HomePage() {
                 </Card>
               </AnimatedSection>
 
-              <AnimatedSection animation="fade-up" delay={400}>
+              <AnimatedSection animation="slide-left" delay={400}>
                 <Card className="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
                   <CardHeader>
                     {/* Video space for warehouse */}

@@ -6,7 +6,7 @@ import type { ReactNode } from "react"
 interface AnimatedSectionProps {
   children: ReactNode
   className?: string
-  animation?: "fade-up" | "fade-in" | "slide-left" | "slide-right"
+  animation?: "fade-up" | "fade-in" | "fade-down" | "slide-left" | "slide-right"
   delay?: number
 }
 
@@ -24,6 +24,8 @@ export function AnimatedSection({ children, className = "", animation = "fade-up
       switch (animation) {
         case "fade-up":
           return `${baseClasses} opacity-0 translate-y-8`
+        case "fade-down":
+          return `${baseClasses} opacity-0 -translate-y-8`
         case "fade-in":
           return `${baseClasses} opacity-0`
         case "slide-left":
