@@ -79,7 +79,10 @@ export default function HomePage() {
                   <CardHeader>
                     <div className="w-full h-full mb-4 rounded-lg overflow-hidden">
                       <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
-                        <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_6PT9B7a4ecS2rlmIW6oywde2QjCt/lasJciKx3z_Q-tOLEZQc7Q/public/thriftShop.mp4" type="video/mp4" />
+                        <source
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_6PT9B7a4ecS2rlmIW6oywde2QjCt/lasJciKx3z_Q-tOLEZQc7Q/public/thriftShop.mp4"
+                          type="video/mp4"
+                        />
                       </video>
                     </div>
                     <CardTitle className="text-secondary group-hover:text-secondary/90 transition-colors mb-2">
@@ -127,8 +130,11 @@ export default function HomePage() {
               <AnimatedSection animation="slide-left" delay={400}>
                 <Card className="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
                   <CardHeader>
-                    {/* Video space for warehouse */}
-                    <div className="w-full h-32 mb-4 rounded-lg">{/* Video will be inserted here */}</div>
+                    <div className="w-full h-full mb-4 rounded-lg overflow-hidden">
+                      <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
+                        <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_6PT9B7a4ecS2rlmIW6oywde2QjCt/3JisanrrHvtZJzT3Zm4hNQ/public/foodBoxPacking2.mp4" type="video/mp4" />
+                      </video>
+                    </div>
                     <CardTitle className="text-primary group-hover:text-primary/90 transition-colors mb-2">
                       {t("home.about.warehouse.title")}
                     </CardTitle>
