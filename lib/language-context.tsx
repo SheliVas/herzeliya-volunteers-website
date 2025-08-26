@@ -50,10 +50,11 @@ const translations = {
     "home.programs.environment.title": "Environmental Care",
     "home.programs.environment.description":
       "Protecting and beautifying our community through cleanup initiatives, tree planting, and sustainability education.",
-    "home.about.title": "How We Work",
+    "home.about.title": "About Us",
     "home.about.mission.title": "Our Mission",
     "home.about.mission.description":
       "To strengthen the Herzeliya community by connecting passionate volunteers with meaningful opportunities to create lasting positive change and support those in need.",
+    "home.about.operations.title": "How We Work",
     "home.about.operations.subtitle":
       "Our foundation operates through a comprehensive system that ensures maximum impact for families in need",
     "home.about.warehouse.title": "Food Distribution Center",
@@ -234,10 +235,11 @@ const translations = {
     "home.programs.environment.title": "שמירה על הסביבה",
     "home.programs.environment.description":
       "הגנה ויפוי של הקהילה שלנו באמצעות יוזמות ניקיון, נטיעת עצים וחינוך לקיימות.",
-    "home.about.title": "אז איך הכל עובד?",
+    "home.about.title": "אודותינו",
     "home.about.mission.title": "המשימה שלנו",
     "home.about.mission.description":
       "לחזק את קהילת הרצליה על ידי חיבור מתנדבים נלהבים עם הזדמנויות משמעותיות ליצור שינוי חיובי מתמשך ולתמוך בנזקקים.",
+    "home.about.operations.title": "איך אנחנו עובדים",
     "home.about.operations.subtitle":
       "העמותה שלנו פועלת באמצעות מערכת מקיפה המבטיחה השפעה מקסימלית למשפחות הזקוקות לעזרה",
     "home.about.warehouse.title": "מרכז חלוקת מזון",

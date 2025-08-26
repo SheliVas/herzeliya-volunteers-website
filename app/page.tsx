@@ -9,6 +9,7 @@ import { AnimatedSection } from "@/components/animated-section"
 import { ParallaxVideoHero } from "@/components/parallax-video-hero"
 import { ParallaxHero } from "@/components/parallax-hero"
 import { TestimonialCarousel } from "@/components/testimonial-carousel"
+import { ShopsCarousel } from "@/components/shops-carousel"
 
 export default function HomePage() {
   const { t } = useLanguage()
@@ -69,6 +70,9 @@ export default function HomePage() {
 
           {/* Operational Rectangles */}
           <div className="mb-16">
+            <AnimatedSection animation="fade-down">
+              <h3 className="text-2xl font-bold text-primary text-center mb-8">{t("home.about.operations.title")}</h3>
+            </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Thrift Shops - top left */}
               <AnimatedSection animation="slide-right" delay={100}>
@@ -287,109 +291,40 @@ export default function HomePage() {
                 <p className="text-lg text-white/90 max-w-2xl mx-auto drop-shadow-md">{t("home.shops.subtitle")}</p>
               </div>
             </AnimatedSection>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <AnimatedSection animation="fade-up" delay={100}>
-                <Card className="hover:shadow-lg transition-shadow border-primary/10 bg-white/95 backdrop-blur-sm">
-                  <CardHeader>
-                    <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
-                      <img
-                        src="/placeholder.svg?height=200&width=300"
-                        alt="Herzeliya Center thrift store"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <CardTitle className="text-primary">{t("home.shops.herzliya1.title")}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-sm text-muted-foreground mb-1">
-                        {t("home.shops.openingHours")}
-                      </h4>
-                      <p className="text-sm">{t("home.shops.herzliya1.hours")}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.manager")}</h4>
-                      <p className="text-sm">{t("home.shops.herzliya1.manager")}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.mainItems")}</h4>
-                      <p className="text-sm leading-relaxed">{t("home.shops.herzliya1.items")}</p>
-                    </div>
-                    <Button asChild className="w-full bg-primary hover:bg-primary/90">
-                      <a href={`tel:${t("home.shops.herzliya1.phone")}`}>{t("home.shops.callManager")}</a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              </AnimatedSection>
 
-              <AnimatedSection animation="fade-up" delay={200}>
-                <Card className="hover:shadow-lg transition-shadow border-secondary/10 bg-white/95 backdrop-blur-sm">
-                  <CardHeader>
-                    <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
-                      <img
-                        src="/placeholder.svg?height=200&width=300"
-                        alt="Herzliya Pituach thrift store"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <CardTitle className="text-secondary">{t("home.shops.herzliya2.title")}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-sm text-muted-foreground mb-1">
-                        {t("home.shops.openingHours")}
-                      </h4>
-                      <p className="text-sm">{t("home.shops.herzliya2.hours")}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.manager")}</h4>
-                      <p className="text-sm">{t("home.shops.herzliya2.manager")}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.mainItems")}</h4>
-                      <p className="text-sm leading-relaxed">{t("home.shops.herzliya2.items")}</p>
-                    </div>
-                    <Button asChild className="w-full bg-secondary hover:bg-secondary/90">
-                      <a href={`tel:${t("home.shops.herzliya2.phone")}`}>{t("home.shops.callManager")}</a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              </AnimatedSection>
-
-              <AnimatedSection animation="fade-up" delay={300}>
-                <Card className="hover:shadow-lg transition-shadow border-accent/10 md:col-span-2 lg:col-span-1 bg-white/95 backdrop-blur-sm">
-                  <CardHeader>
-                    <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
-                      <img
-                        src="/placeholder.svg?height=200&width=300"
-                        alt="Old Herzeliya thrift store"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <CardTitle className="text-accent">{t("home.shops.herzliya3.title")}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-sm text-muted-foreground mb-1">
-                        {t("home.shops.openingHours")}
-                      </h4>
-                      <p className="text-sm">{t("home.shops.herzliya3.hours")}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.manager")}</h4>
-                      <p className="text-sm">{t("home.shops.herzliya3.manager")}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-sm text-muted-foreground mb-1">{t("home.shops.mainItems")}</h4>
-                      <p className="text-sm leading-relaxed">{t("home.shops.herzliya3.items")}</p>
-                    </div>
-                    <Button asChild className="w-full bg-accent hover:bg-accent/90">
-                      <a href={`tel:${t("home.shops.herzliya3.phone")}`}>{t("home.shops.callManager")}</a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              </AnimatedSection>
-            </div>
+            <AnimatedSection animation="fade-up" delay={100}>
+              <ShopsCarousel
+                shops={[
+                  {
+                    id: "herzliya1",
+                    titleKey: "home.shops.herzliya1.title",
+                    hoursKey: "home.shops.herzliya1.hours",
+                    managerKey: "home.shops.herzliya1.manager",
+                    itemsKey: "home.shops.herzliya1.items",
+                    phoneKey: "home.shops.herzliya1.phone",
+                    color: "primary",
+                  },
+                  {
+                    id: "herzliya2",
+                    titleKey: "home.shops.herzliya2.title",
+                    hoursKey: "home.shops.herzliya2.hours",
+                    managerKey: "home.shops.herzliya2.manager",
+                    itemsKey: "home.shops.herzliya2.items",
+                    phoneKey: "home.shops.herzliya2.phone",
+                    color: "secondary",
+                  },
+                  {
+                    id: "herzliya3",
+                    titleKey: "home.shops.herzliya3.title",
+                    hoursKey: "home.shops.herzliya3.hours",
+                    managerKey: "home.shops.herzliya3.manager",
+                    itemsKey: "home.shops.herzliya3.items",
+                    phoneKey: "home.shops.herzliya3.phone",
+                    color: "accent",
+                  },
+                ]}
+              />
+            </AnimatedSection>
           </div>
         </section>
       </ParallaxHero>
