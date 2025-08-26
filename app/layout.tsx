@@ -46,9 +46,6 @@ export default function RootLayout({
         <Script
           src="https://website-widgets.pages.dev/dist/sienna.min.js"
           strategy="afterInteractive"
-          onError={(e) => {
-            console.warn("[v0] Accessibility widget failed to load:", e)
-          }}
         />
       </body>
     </html>
