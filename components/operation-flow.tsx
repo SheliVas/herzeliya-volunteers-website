@@ -86,21 +86,6 @@ export function OperationFlow() {
       descKey: "home.operation.step4.description",
       color: "primary",
     },
-    {
-      icon: (
-        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-          />
-        </svg>
-      ),
-      titleKey: "home.operation.step5.title",
-      descKey: "home.operation.step5.description",
-      color: "secondary",
-    },
   ]
 
   return (
@@ -209,10 +194,13 @@ export function OperationFlow() {
           ))}
         </div>
 
-        {/* Final message */}
-        <AnimatedSection animation="fade-up" delay={500}>
+        <AnimatedSection animation="fade-up" delay={400}>
           <div className="mt-16 text-center">
-            <div className="inline-block bg-gradient-to-r from-primary via-secondary to-accent p-6 rounded-2xl shadow-xl">
+            <div className="inline-block bg-gradient-to-r from-primary via-secondary to-accent p-8 rounded-2xl shadow-xl">
+              <div className="mb-4">
+                <h3 className="text-white font-bold text-2xl">{t("home.operation.step5.title")}</h3>
+              </div>
+              <p className="text-white/90 text-lg mb-4 max-w-2xl">{t("home.operation.step5.description")}</p>
               <p className="text-white font-semibold text-lg max-w-2xl">{t("home.operation.conclusion")}</p>
             </div>
           </div>
