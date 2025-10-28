@@ -151,7 +151,7 @@ export default function GalleryPage() {
                   {t("gallery.cta.volunteer")}
                 </a>
                 <a
-                  href="https://donate.example.com/herzeliya-volunteers"
+                  href="https://pay.tranzila.com/mitnadvim/ekpvdWF5bnp0QmhQazRHYWdwTmlaUT09"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 py-3 bg-secondary text-secondary-foreground font-medium rounded-lg hover:bg-secondary/90 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2"

@@ -120,7 +120,7 @@ export function Header() {
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium focus:outline-none focus:ring-2 focus:ring-primary-foreground focus:ring-offset-2 focus:ring-offset-primary transition-all duration-200 hover:scale-105 hover:shadow-lg"
               aria-label={t("nav.donate")}
             >
-              <a href="https://donate.example.com/herzeliya-volunteers" target="_blank" rel="noopener noreferrer">
+              <a href="https://pay.tranzila.com/mitnadvim/ekpvdWF5bnp0QmhQazRHYWdwTmlaUT09" target="_blank" rel="noopener noreferrer">
                 {t("nav.donate")}
               </a>
             </Button>
@@ -186,7 +186,7 @@ export function Header() {
                   aria-label={t("nav.donate")}
                 >
                   <a
-                    href="https://donate.example.com/herzeliya-volunteers"
+                    href="https://pay.tranzila.com/mitnadvim/ekpvdWF5bnp0QmhQazRHYWdwTmlaUT09"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsMobileMenuOpen(false)}
