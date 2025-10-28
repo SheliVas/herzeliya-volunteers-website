@@ -9,6 +9,7 @@ import { AnimatedSection } from "@/components/animated-section"
 import { ParallaxVideoHero } from "@/components/parallax-video-hero"
 import { TestimonialCarousel } from "@/components/testimonial-carousel"
 import { ShopsCarousel } from "@/components/shops-carousel"
+import { OperationFlow } from "@/components/operation-flow"
 
 export default function HomePage() {
   const { t } = useLanguage()
@@ -278,6 +279,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <OperationFlow />
 
       {/* Shops Section */}
       <ParallaxVideoHero
@@ -591,17 +594,17 @@ export default function HomePage() {
                   </CardHeader>
                   <CardContent className="p-0">
                     <div className="w-full h-80 rounded-b-lg overflow-hidden">
-                        <iframe
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3377.267784674774!2d34.83315657658373!3d32.1700529147554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d48743db00d63%3A0xbde3c9d35825073!2sHaNadiv%20St%2049%2C%20Hertsliya%2C%204648563!5e0!3m2!1sen!2sil!4v1756226538048!5m2!1sen!2sil"
-                          width="100%"
-                          height="100%"
-                          style={{ border: 0 }}
-                          allowFullScreen
-                          loading="lazy"
-                          referrerPolicy="no-referrer-when-downgrade"
-                          title={t("home.contact.map.title")}
-                          aria-label="Map showing Herzeliya Volunteers location in Herzliya, Israel"
-                        />
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3377.267784674774!2d34.83315657658373!3d32.1700529147554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d48743db00d63%3A0xbde3c9d35825073!2sHaNadiv%20St%2049%2C%20Hertsliya%2C%204648563!5e0!3m2!1sen!2sil!4v1756226538048!5m2!1sen!2sil"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title={t("home.contact.map.title")}
+                        aria-label="Map showing Herzeliya Volunteers location in Herzliya, Israel"
+                      />
                     </div>
                   </CardContent>
                 </Card>

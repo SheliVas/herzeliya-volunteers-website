@@ -5,6 +5,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { SkipLink } from "@/components/skip-link"
 import { LanguageProvider } from "@/lib/language-context"
+import { FloatingDonationBanner } from "@/components/floating-donation-banner"
 import Script from "next/script"
 import "./globals.css"
 
@@ -42,11 +43,9 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <FloatingDonationBanner />
         </LanguageProvider>
-        <Script
-          src="https://website-widgets.pages.dev/dist/sienna.min.js"
-          strategy="afterInteractive"
-        />
+        <Script src="https://website-widgets.pages.dev/dist/sienna.min.js" strategy="afterInteractive" />
       </body>
     </html>
   )

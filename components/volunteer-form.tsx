@@ -8,14 +8,13 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
 
 interface FormData {
   name: string
   email: string
   phone: string
-  area: string
+  area: string[]
   availability: string[]
 }
 
@@ -33,7 +32,7 @@ export function VolunteerForm() {
     name: "",
     email: "",
     phone: "",
-  area: "warehouse",
+    area: [],
     availability: [],
   })
   const [errors, setErrors] = useState<FormErrors>({})
@@ -55,11 +54,11 @@ export function VolunteerForm() {
 
     if (!formData.phone.trim()) {
       newErrors.phone = t("home.getInvolved.form.error.phone")
-    } else if (!/^[\d\s\-+$$$$]+$/.test(formData.phone)) {
+    } else if (!/^[\d\s\-+()]+$/.test(formData.phone)) {
       newErrors.phone = t("home.getInvolved.form.error.phone")
     }
 
-    if (!formData.area) {
+    if (formData.area.length === 0) {
       newErrors.area = t("home.getInvolved.form.error.area")
     }
 
@@ -86,6 +85,13 @@ export function VolunteerForm() {
     console.log("[v0] Form submitted:", formData)
     setIsSubmitted(true)
     setIsSubmitting(false)
+  }
+
+  const handleAreaChange = (value: string, checked: boolean) => {
+    setFormData((prev) => ({
+      ...prev,
+      area: checked ? [...prev.area, value] : prev.area.filter((item) => item !== value),
+    }))
   }
 
   const handleAvailabilityChange = (value: string, checked: boolean) => {
@@ -164,27 +170,25 @@ export function VolunteerForm() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="area" className="transition-colors duration-200">
-              {t("home.getInvolved.form.area")}
-            </Label>
-            <Select value={formData.area} onValueChange={(value) => setFormData((prev) => ({ ...prev, area: value }))}>
-              <SelectTrigger
-                className={`transition-all duration-200 hover:border-primary/60 ${errors.area ? "border-red-500" : ""}`}
-              >
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent className="transition-all duration-200">
-                <SelectItem value="shops" className="transition-colors duration-200 hover:bg-primary/10">
-                  {t("home.getInvolved.form.area.shops")}
-                </SelectItem>
-                <SelectItem value="warehouse" className="transition-colors duration-200 hover:bg-secondary/10">
-                  {t("home.getInvolved.form.area.warehouse")}
-                </SelectItem>
-                <SelectItem value="distribution" className="transition-colors duration-200 hover:bg-accent/10">
-                  {t("home.getInvolved.form.area.distribution")}
-                </SelectItem>
-              </SelectContent>
-            </Select>
+            <Label className="transition-colors duration-200">{t("home.getInvolved.form.area")}</Label>
+            <div className="space-y-2">
+              {["shops", "warehouse", "distribution"].map((option) => (
+                <div
+                  key={option}
+                  className="flex items-center space-x-2 transition-all duration-200 hover:bg-accent/10 rounded p-1"
+                >
+                  <Checkbox
+                    id={`area-${option}`}
+                    checked={formData.area.includes(option)}
+                    onCheckedChange={(checked: boolean) => handleAreaChange(option, checked)}
+                    className="transition-all duration-200 hover:scale-110"
+                  />
+                  <Label htmlFor={`area-${option}`} className="text-sm transition-colors duration-200 cursor-pointer">
+                    {t(`home.getInvolved.form.area.${option}`)}
+                  </Label>
+                </div>
+              ))}
+            </div>
             {errors.area && <p className="text-sm text-red-500 transition-opacity duration-200">{errors.area}</p>}
           </div>
 

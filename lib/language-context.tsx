@@ -147,10 +147,10 @@ const translations = {
     "home.contact.phone": "Phone",
     "home.contact.address": "Address",
     "home.contact.hours": "Office Hours",
-  "home.contact.email.value": "herzliyas.volunteers@gmail.com",
-  "home.contact.phone.value": "09-123-4567",
-  "home.contact.address.value": "49 Hanadiv St, Herzliya, 4648563",
-  "home.contact.hours.value": "Sunday-Thursday: 08:00-16:00\nFriday: 08:00-13:00",
+    "home.contact.email.value": "herzliyas.volunteers@gmail.com",
+    "home.contact.phone.value": "09-123-4567",
+    "home.contact.address.value": "49 Hanadiv St, Herzliya, 4648563",
+    "home.contact.hours.value": "Sunday-Thursday: 08:00-16:00\nFriday: 08:00-13:00",
     "home.contact.map.title": "Find Us",
     "gallery.title": "Our Community in Action",
     "gallery.subtitle":
@@ -200,6 +200,26 @@ const translations = {
     "home.shops.herzliya3.manager": "Tzofi Garti",
     "home.shops.herzliya3.phone": "054-5444389",
     "home.shops.herzliya3.items": "Children's and baby clothes, toys and games",
+    "home.operation.title": "Our Operation",
+    "home.operation.subtitle":
+      "A complete cycle of community support - from donations to weekly meals for families in need",
+    "home.operation.step1.title": "Clothing & Equipment Donations",
+    "home.operation.step1.description":
+      "Community members donate clothing, household items, and equipment to our thrift stores, giving items a second life while supporting our mission.",
+    "home.operation.step2.title": "Thrift Store Sales",
+    "home.operation.step2.description":
+      "People shop at our three thrift stores throughout Herzeliya. Every purchase directly funds the purchase of fresh groceries for families in need.",
+    "home.operation.step3.title": "Food Package Preparation",
+    "home.operation.step3.description":
+      "Using income from the shops and donations, volunteers at our food distribution center carefully pack weekly grocery packages with fresh, nutritious food.",
+    "home.operation.step4.title": "Volunteer Distribution Network",
+    "home.operation.step4.description":
+      "Our dedicated volunteers pick up the prepared packages and deliver them personally to supported families throughout Herzliya neighborhoods.",
+    "home.operation.step5.title": "Weekly Meals for Families",
+    "home.operation.step5.description":
+      "Every Thursday, families in need receive nutritious meals, ensuring they have the food security they deserve. This cycle repeats weekly, year-round.",
+    "home.operation.conclusion":
+      "This entire operation ensures families in need receive the meals they need so much, every Thursday.",
   },
   he: {
     "site.title": "עמותת מתנדבי הרצליה",
@@ -332,7 +352,7 @@ const translations = {
     "home.contact.email.value": "herzliyas.volunteers@gmail.com",
     "home.contact.phone.value": "09-123-4567",
     "home.contact.address.value": "הנדיב 49, הרצליה, 4648563",
-  "home.contact.hours.value": "ראשון-חמישי: 08:00-16:00\nשישי: 08:00-13:00",
+    "home.contact.hours.value": "ראשון-חמישי: 08:00-16:00\nשישי: 08:00-13:00",
     "home.contact.map.title": "מצאו אותנו",
     "gallery.title": "הקהילה שלנו בפעולה",
     "gallery.subtitle":
@@ -365,21 +385,40 @@ const translations = {
     "home.shops.openingHours": "שעות פתיחה",
     "home.shops.manager": "מנהל\\ת",
     "home.shops.mainItems": "פריטים עיקריים",
-  "home.shops.herzliya1.title": "חת\"ם סופר 29 הרצליה",
-  "home.shops.herzliya1.hours": "א-ה 08:00-13:00\nג 16:00-19:00",
-  "home.shops.herzliya1.manager": "משה דנגוט",
-  "home.shops.herzliya1.phone": "052-3673385",
-  "home.shops.herzliya1.items": "בגדי נשים, גברים וילדים, בגדי ומוצרי תינוקות, נעלים, כלי מטבח, כלי בית, מכשירי חשמל, תכשיטים, משחקים וצעצועים, ספרים",
-  "home.shops.herzliya2.title": "חנות \"הזדמנויות\", שדרות ירושלים 41 הרצליה",
-  "home.shops.herzliya2.hours": "א-ד 09:00-13:00\nג 16:00-18:00",
-  "home.shops.herzliya2.manager": "אירית נאור",
-  "home.shops.herzliya2.phone": "054-6350446",
-  "home.shops.herzliya2.items": "בגדי נשים וגברים",
-  "home.shops.herzliya3.title": "חנות \"קטנטנים\", שדרות ירושלים 41, הרצליה",
-  "home.shops.herzliya3.hours": "א-ד 09:00-12:30",
-  "home.shops.herzliya3.manager": "צופי גרטי",
-  "home.shops.herzliya3.phone": "054-5444389",
-  "home.shops.herzliya3.items": "בגדי ילדים ותינוקות, צעצועים ומשחקים",
+    "home.shops.herzliya1.title": 'חת"ם סופר 29 הרצליה',
+    "home.shops.herzliya1.hours": "א-ה 08:00-13:00\nג 16:00-19:00",
+    "home.shops.herzliya1.manager": "משה דנגוט",
+    "home.shops.herzliya1.phone": "052-3673385",
+    "home.shops.herzliya1.items":
+      "בגדי נשים, גברים וילדים,:bgדי ומוצרי תינוקות, נעלים, כלי מטבח, כלי בית, מכשירי חשמל, תכשיטים, משחקים וצעצועים, ספרים",
+    "home.shops.herzliya2.title": 'חנות "הזדמנויות", שדרות ירושלים 41 הרצליה',
+    "home.shops.herzliya2.hours": "א-ד 09:00-13:00\nג 16:00-18:00",
+    "home.shops.herzliya2.manager": "אירית נאור",
+    "home.shops.herzliya2.phone": "054-6350446",
+    "home.shops.herzliya2.items": "בגדי נשים וגברים",
+    "home.shops.herzliya3.title": 'חנות "קטנטנים", שדרות ירושלים 41, הרצליה',
+    "home.shops.herzliya3.hours": "א-ד 09:00-12:30",
+    "home.shops.herzliya3.manager": "צופי גרטי",
+    "home.shops.herzliya3.phone": "054-5444389",
+    "home.shops.herzliya3.items": "בגדי ילדים ותינוקות, צעצועים ומשחקים",
+    "home.operation.title": "המערך שלנו",
+    "home.operation.subtitle": "מעגל שלם של תמיכה קהילתית - מתרומות ועד ארוחות שבועיות למשפחות נזקקות",
+    "home.operation.step1.title": "תרומות בגדים וציוד",
+    "home.operation.step1.description":
+      "חברי הקהילה תורמים בגדים, כלי בית וציוד לחנויות היד השנייה שלנו, נותנים לפריטים חיים שניים ותומכים במשימה שלנו.",
+    "home.operation.step2.title": "מכירות בחנויות יד שנייה",
+    "home.operation.step2.description":
+      "אנשים קונים בשלוש חנויות היד השנייה שלנו ברחבי הרצליה. כל רכישה מממנת ישירות את רכישת מצרכים טריים למשפחות נזקקות.",
+    "home.operation.step3.title": "הכנת חבילות מזון",
+    "home.operation.step3.description":
+      "באמצעות הכנסות מהחנויות ותרומות, מתנדבים במרכז חלוקת המזון שלנו אורזים בקפידה חבילות מצרכים שבועיות עם מזון טרי ומזין.",
+    "home.operation.step4.title": "רשת חלוקה מתנדבת",
+    "home.operation.step4.description":
+      "המתנדבים המסורים שלנו אוספים את החבילות המוכנות ומעבירים אותן באופן אישי למשפחות נתמכות ברחבי שכונות הרצליה.",
+    "home.operation.step5.title": "ארוחות שבועיות למשפחות",
+    "home.operation.step5.description":
+      "בכל יום חמישי, משפחות נזקקות מקבלות ארוחות מזינות, מה שמבטיח להן את הביטחון התזונתי שמגיע להן. המעגל הזה חוזר על עצמו מדי שבוע, כל השנה.",
+    "home.operation.conclusion": "כל המערך הזה מבטיח שמשפחות נזקקות יקבלו את הארוחות שהן כל כך צריכות, בכל יום חמישי.",
   },
 }
 
