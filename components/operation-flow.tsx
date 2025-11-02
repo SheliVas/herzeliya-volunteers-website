@@ -197,7 +197,15 @@ export function OperationFlow() {
         <AnimatedSection animation="fade-up" delay={400}>
           <div className="mt-16 text-center">
             <div className="inline-block bg-gradient-to-r from-primary via-secondary to-accent p-8 rounded-2xl shadow-xl">
-              <div className="mb-4">
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
+                </svg>
                 <h3 className="text-white font-bold text-2xl">{t("home.operation.step5.title")}</h3>
               </div>
               <p className="text-white/90 text-lg mb-4 max-w-2xl">{t("home.operation.step5.description")}</p>
