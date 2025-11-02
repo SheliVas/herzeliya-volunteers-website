@@ -1,0 +1,8 @@
+# robots.txt for Herzeliya Volunteers Association
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://herzeliya-volunteers.org.il/sitemap.xml

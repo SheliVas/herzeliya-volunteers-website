@@ -13,8 +13,8 @@ interface AnimatedSectionProps {
 export function AnimatedSection({ children, className = "", animation = "fade-up", delay = 0 }: AnimatedSectionProps) {
   const { ref, isIntersecting } = useIntersectionObserver({
     threshold: 0.1,
-    rootMargin: "-50px",
-    triggerOnce: false,
+    rootMargin: "0px",
+    triggerOnce: true,
   })
 
   const getAnimationClasses = () => {

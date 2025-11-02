@@ -1,6 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/lib/language-context"
+import { trackDonateClick } from "@/lib/analytics"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
@@ -10,6 +11,7 @@ import { ParallaxVideoHero } from "@/components/parallax-video-hero"
 import { TestimonialCarousel } from "@/components/testimonial-carousel"
 import { ShopsCarousel } from "@/components/shops-carousel"
 import { OperationFlow } from "@/components/operation-flow"
+import { ImpactCounter } from "@/components/impact-counter"
 
 export default function HomePage() {
   const { t } = useLanguage()
@@ -33,14 +35,29 @@ export default function HomePage() {
                   {t("home.hero.tagline")}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 shadow-lg">
-                    <Link href="https://pay.tranzila.com/mitnadvim/ekpvdWF5bnp0QmhQazRHYWdwTmlaUT09">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-gradient-to-r from-secondary to-secondary/80 hover:from-secondary/90 hover:to-secondary/70 text-white font-bold text-lg px-8 py-6 shadow-2xl hover:shadow-secondary/50 transition-all duration-300 hover:scale-105"
+                  >
+                    <Link
+                      href="https://pay.tranzila.com/mitnadvim/ekpvdWF5bnp0QmhQazRHYWdwTmlaUT09"
+                      onClick={() => trackDonateClick("hero")}
+                    >
                       {t("home.hero.donateNow")}
                     </Link>
                   </Button>
-                  <Button asChild size="lg" className="bg-primary hover:bg-primary/90 shadow-lg">
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="outline"
+                    className="border-2 border-white text-primary hover:bg-white hover:text-primary font-semibold text-lg px-8 py-6 shadow-lg transition-all duration-300 hover:scale-105"
+                  >
                     <Link href="#get-involved">{t("home.hero.joinUs")}</Link>
                   </Button>
+                </div>
+                <div className="mt-12">
+                  <ImpactCounter />
                 </div>
               </div>
             </AnimatedSection>
@@ -49,9 +66,9 @@ export default function HomePage() {
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 shadow-xl border border-white/20">
                   <div className="text-center space-y-4">
                     <div className="text-4xl font-bold text-white drop-shadow-lg">300+</div>
-                    <p className="text-white/90 font-medium">{t("home.impact.volunteers")}</p>
+                    <p className="text-white font-medium">{t("home.impact.volunteers")}</p>
                     <div className="w-16 h-1 bg-primary mx-auto rounded-full"></div>
-                    <p className="text-white/80 text-sm leading-relaxed">{t("home.hero.supportedFamilies")}</p>
+                    <p className="text-white text-sm leading-relaxed">{t("home.hero.supportedFamilies")}</p>
                   </div>
                 </div>
               </div>
@@ -59,7 +76,8 @@ export default function HomePage() {
           </div>
         </div>
       </ParallaxVideoHero>
-
+      
+      <OperationFlow />
       {/* About Us Section */}
       <section id="about" className="py-16 section-pattern-primary">
         <div className="container mx-auto px-4 relative z-10">
@@ -280,9 +298,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <OperationFlow />
+
 
       {/* Shops Section */}
+      <section id="stores">
       <ParallaxVideoHero
         backgroundVideo="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_6PT9B7a4ecS2rlmIW6oywde2QjCt/r6NLBlG2w3nK108M-Kej0k/public/clothingBoxPacking2.mp4"
         className="py-20 lg:py-32 min-h-[80vh] flex items-center justify-center"
@@ -342,9 +361,10 @@ export default function HomePage() {
           </AnimatedSection>
         </div>
       </ParallaxVideoHero>
+      </section>
 
       {/* Get Involved Section */}
-      <section id="get-involved" className="py-16 section-pattern-secondary floating-shapes">
+      <section id="volunteer" className="py-16 section-pattern-secondary floating-shapes">
         <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection animation="fade-down">
             <div className="text-center mb-12">
@@ -363,7 +383,7 @@ export default function HomePage() {
 
             {/* Donation Section */}
             <AnimatedSection animation="slide-left" delay={200}>
-              <div>
+              <div id="donate">
                 <Card className="border-secondary/20 h-full card-enhanced">
                   <CardHeader>
                     <CardTitle className="text-secondary">{t("home.getInvolved.donation.title")}</CardTitle>
@@ -440,6 +460,7 @@ export default function HomePage() {
                         href="https://pay.tranzila.com/mitnadvim/ekpvdWF5bnp0QmhQazRHYWdwTmlaUT09"
                         rel="noopener noreferrer"
                         aria-label={`${t("home.getInvolved.donation.button")} - ${t("accessibility.openInNewTab")}`}
+                        onClick={() => trackDonateClick("section")}
                       >
                         {t("home.getInvolved.donation.button")}
                       </a>
@@ -483,7 +504,7 @@ export default function HomePage() {
       </section>
 
       {/* Contact Us Section */}
-      <section id="contact" className="py-16 section-pattern-accent">
+      <section id="contact-us" className="py-16 section-pattern-accent">
         <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection animation="fade-down">
             <div className="text-center mb-12">
@@ -609,6 +630,238 @@ export default function HomePage() {
                   </CardContent>
                 </Card>
               </div>
+            </AnimatedSection>
+          </div>
+
+          {/* Shops in Contact Section */}
+          <div className="mt-16">
+            <AnimatedSection animation="fade-down">
+              <h3 className="text-2xl lg:text-3xl font-bold text-primary text-center mb-8">
+                {t("home.shops.title")}
+              </h3>
+            </AnimatedSection>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Shop 1 */}
+              <AnimatedSection animation="slide-right" delay={100}>
+                <Card className="border-primary/20 h-full hover:shadow-xl transition-all">
+                  <CardHeader>
+                    <CardTitle className="text-primary text-lg">{t("home.shops.herzliya1.title")}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <p className="text-sm text-muted-foreground">{t("home.shops.herzliya1.address")}</p>
+                    </div>
+                    <Button asChild size="sm" variant="outline" className="w-full">
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(t("home.shops.herzliya1.address"))}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {t("home.shops.navigate")}
+                      </a>
+                    </Button>
+                    <div className="flex items-center gap-3">
+                      <svg className="w-5 h-5 text-secondary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                      <a href={`tel:${t("home.shops.herzliya1.phone")}`} className="text-sm hover:text-secondary transition-colors">
+                        {t("home.shops.herzliya1.phone")}
+                      </a>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-muted-foreground mb-1">{t("home.shops.manager")}</p>
+                      <p className="text-sm">{t("home.shops.herzliya1.manager")}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-muted-foreground mb-1">{t("home.shops.openingHours")}</p>
+                      <p className="text-sm whitespace-pre-line">{t("home.shops.herzliya1.hours")}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </AnimatedSection>
+
+              {/* Shop 2 */}
+              <AnimatedSection animation="fade-up" delay={200}>
+                <Card className="border-secondary/20 h-full hover:shadow-xl transition-all">
+                  <CardHeader>
+                    <CardTitle className="text-secondary text-lg">{t("home.shops.herzliya2.title")}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <p className="text-sm text-muted-foreground">{t("home.shops.herzliya2.address")}</p>
+                    </div>
+                    <Button asChild size="sm" variant="outline" className="w-full">
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(t("home.shops.herzliya2.address"))}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {t("home.shops.navigate")}
+                      </a>
+                    </Button>
+                    <div className="flex items-center gap-3">
+                      <svg className="w-5 h-5 text-secondary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                      <a href={`tel:${t("home.shops.herzliya2.phone")}`} className="text-sm hover:text-secondary transition-colors">
+                        {t("home.shops.herzliya2.phone")}
+                      </a>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-muted-foreground mb-1">{t("home.shops.manager")}</p>
+                      <p className="text-sm">{t("home.shops.herzliya2.manager")}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-muted-foreground mb-1">{t("home.shops.openingHours")}</p>
+                      <p className="text-sm whitespace-pre-line">{t("home.shops.herzliya2.hours")}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </AnimatedSection>
+
+              {/* Shop 3 */}
+              <AnimatedSection animation="slide-left" delay={300}>
+                <Card className="border-accent/20 h-full hover:shadow-xl transition-all">
+                  <CardHeader>
+                    <CardTitle className="text-accent text-lg">{t("home.shops.herzliya3.title")}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <p className="text-sm text-muted-foreground">{t("home.shops.herzliya3.address")}</p>
+                    </div>
+                    <Button asChild size="sm" variant="outline" className="w-full">
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(t("home.shops.herzliya3.address"))}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {t("home.shops.navigate")}
+                      </a>
+                    </Button>
+                    <div className="flex items-center gap-3">
+                      <svg className="w-5 h-5 text-secondary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                      <a href={`tel:${t("home.shops.herzliya3.phone")}`} className="text-sm hover:text-secondary transition-colors">
+                        {t("home.shops.herzliya3.phone")}
+                      </a>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-muted-foreground mb-1">{t("home.shops.manager")}</p>
+                      <p className="text-sm">{t("home.shops.herzliya3.manager")}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-muted-foreground mb-1">{t("home.shops.openingHours")}</p>
+                      <p className="text-sm whitespace-pre-line">{t("home.shops.herzliya3.hours")}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </AnimatedSection>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Privacy Policy Section */}
+      <section id="privacy" className="py-16 bg-background">
+        <div className="container mx-auto px-4 relative z-10">
+          <AnimatedSection animation="fade-down">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">{t("home.privacy.title")}</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t("home.privacy.subtitle")}</p>
+            </div>
+          </AnimatedSection>
+
+          <div className="max-w-4xl mx-auto space-y-8">
+            <AnimatedSection animation="fade-up" delay={100}>
+              <Card className="border-primary/20">
+                <CardContent className="pt-6">
+                  <p className="text-muted-foreground leading-relaxed">{t("home.privacy.intro")}</p>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="slide-right" delay={200}>
+              <Card className="border-secondary/20">
+                <CardHeader>
+                  <CardTitle className="text-secondary">{t("home.privacy.collection.title")}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground leading-relaxed">{t("home.privacy.collection.description")}</p>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="slide-left" delay={300}>
+              <Card className="border-accent/20">
+                <CardHeader>
+                  <CardTitle className="text-accent">{t("home.privacy.usage.title")}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed font-semibold">{t("home.privacy.usage.description")}</p>
+                  <ul className="space-y-2 list-disc list-inside text-muted-foreground">
+                    <li>{t("home.privacy.usage.point1")}</li>
+                    <li>{t("home.privacy.usage.point2")}</li>
+                    <li>{t("home.privacy.usage.point3")}</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="slide-right" delay={400}>
+              <Card className="border-primary/20">
+                <CardHeader>
+                  <CardTitle className="text-primary">{t("home.privacy.protection.title")}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground leading-relaxed">{t("home.privacy.protection.description")}</p>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="slide-left" delay={500}>
+              <Card className="border-secondary/20">
+                <CardHeader>
+                  <CardTitle className="text-secondary">{t("home.privacy.rights.title")}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">{t("home.privacy.rights.description")}</p>
+                  <ul className="space-y-2 list-disc list-inside text-muted-foreground">
+                    <li>{t("home.privacy.rights.point1")}</li>
+                    <li>{t("home.privacy.rights.point2")}</li>
+                    <li>{t("home.privacy.rights.point3")}</li>
+                    <li>{t("home.privacy.rights.point4")}</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="fade-up" delay={600}>
+              <Card className="border-accent/20 bg-accent/5">
+                <CardContent className="pt-6">
+                  <p className="text-muted-foreground leading-relaxed text-center">
+                    {t("home.privacy.contact")}
+                  </p>
+                  <p className="text-primary font-semibold text-center mt-2">
+                    <a href="mailto:herzliyas.volunteers@gmail.com" className="hover:text-secondary transition-colors">
+                      herzliyas.volunteers@gmail.com
+                    </a>
+                  </p>
+                </CardContent>
+              </Card>
             </AnimatedSection>
           </div>
         </div>

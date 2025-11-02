@@ -101,23 +101,19 @@ export function OperationFlow() {
           </div>
         </AnimatedSection>
 
-        <div className="relative max-w-4xl mx-auto">
-          {/* Vertical connecting line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-secondary to-accent transform -translate-x-1/2 hidden md:block" />
-
+        <div className="relative w-full mx-auto">
           {steps.map((step, index) => (
-            <AnimatedSection key={index} animation="fade-up" delay={index * 100}>
-              <div className="relative mb-16 last:mb-0">
+              <div key={index} className="relative mb-16 last:mb-0 flex justify-center w-full">
                 {/* Step container */}
                 <div
-                  className={`flex flex-col md:flex-row items-center gap-8 transition-all duration-700 ${
+                  className={`flex flex-col md:flex-row items-center gap-8 transition-all duration-700 max-w-6xl mx-auto ${
                     activeStep >= index ? "opacity-100 scale-100" : "opacity-50 scale-95"
                   }`}
                 >
                   {/* Content - alternates sides on desktop */}
                   <div
-                    className={`flex-1 ${
-                      index % 2 === 0 ? "md:text-right md:pr-12" : "md:text-left md:pl-12 md:order-2"
+                    className={`flex-1 w-full md:text-center ${
+                      index % 2 === 0 ? "md:pr-20 md:order-1" : "md:pl-20 md:order-3"
                     }`}
                   >
                     <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
@@ -137,7 +133,7 @@ export function OperationFlow() {
                   </div>
 
                   {/* Icon circle */}
-                  <div className="relative flex-shrink-0 md:order-1">
+                  <div className="relative flex-shrink-0 md:order-2 z-10">
                     <div
                       className={`w-20 h-20 rounded-full flex items-center justify-center shadow-lg transition-all duration-500 ${
                         activeStep >= index ? "scale-110" : "scale-100"
@@ -164,14 +160,12 @@ export function OperationFlow() {
                       />
                     )}
                   </div>
-
-                  {/* Spacer for alternating layout */}
-                  <div className="flex-1 hidden md:block" />
+                  
                 </div>
 
                 {/* Arrow between steps */}
                 {index < steps.length - 1 && (
-                  <div className="flex justify-center my-8 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:my-0 md:top-full md:mt-4">
+                  <div className="hidden md:flex justify-center my-8 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:my-0 md:top-full md:mt-4">
                     <svg
                       className={`w-8 h-8 transition-all duration-500 ${
                         activeStep > index ? "text-primary opacity-100" : "text-gray-300 opacity-50"
@@ -190,7 +184,6 @@ export function OperationFlow() {
                   </div>
                 )}
               </div>
-            </AnimatedSection>
           ))}
         </div>
 

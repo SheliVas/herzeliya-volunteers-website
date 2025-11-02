@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { LanguageToggle } from "@/components/language-toggle"
 import { useLanguage } from "@/lib/language-context"
+import { trackDonateClick } from "@/lib/analytics"
 import { useState, useEffect, useRef } from "react"
 import { Menu, X } from "lucide-react"
 import { usePathname } from "next/navigation"
@@ -120,7 +121,12 @@ export function Header() {
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium focus:outline-none focus:ring-2 focus:ring-primary-foreground focus:ring-offset-2 focus:ring-offset-primary transition-all duration-200 hover:scale-105 hover:shadow-lg"
               aria-label={t("nav.donate")}
             >
-              <a href="https://pay.tranzila.com/mitnadvim/ekpvdWF5bnp0QmhQazRHYWdwTmlaUT09" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://pay.tranzila.com/mitnadvim/ekpvdWF5bnp0QmhQazRHYWdwTmlaUT09"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackDonateClick("header")}
+              >
                 {t("nav.donate")}
               </a>
             </Button>
@@ -189,7 +195,10 @@ export function Header() {
                     href="https://pay.tranzila.com/mitnadvim/ekpvdWF5bnp0QmhQazRHYWdwTmlaUT09"
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={() => {
+                      trackDonateClick("header-mobile")
+                      setIsMobileMenuOpen(false)
+                    }}
                   >
                     {t("nav.donate")}
                   </a>

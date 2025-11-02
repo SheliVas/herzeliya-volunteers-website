@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/language-context"
+import { trackDonateClick } from "@/lib/analytics"
 
 export function FloatingDonationBanner() {
   const [isVisible, setIsVisible] = useState(false)
@@ -39,6 +40,7 @@ export function FloatingDonationBanner() {
         <Button
           className="w-full btn-primary font-semibold text-sm py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
           onClick={() => {
+            trackDonateClick("floating")
             window.open("https://pay.tranzila.com/mitnadvim/ekpvdWF5bnp0QmhQazRHYWdwTmlaUT09", "_blank")
           }}
         >
