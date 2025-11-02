@@ -1,56 +1,24 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { useLanguage } from "@/lib/language-context"
 import { AnimatedSection } from "@/components/animated-section"
 import { Lightbox } from "@/components/lightbox"
 
-type GalleryImage = { src: string; alt: string }
+type GalleryImage = { src: string; altKey: string }
 const galleryImages: GalleryImage[] = [
-  {
-    src: "/foodcenter1.jpeg",
-    alt: "Food Distribution Center - Volunteers packing groceries",
-  },
-  {
-    src: "/foodcenter2.jpeg",
-    alt: "Food Distribution Center - Warehouse operations",
-  },
-  {
-    src: "/foodcenter3.png",
-    alt: "Food Distribution Center - Community volunteers",
-  },
-  {
-    src: "/foodcenter4.png",
-    alt: "Food Distribution Center - Food packaging",
-  },
-  {
-    src: "/shop1.png",
-    alt: "Thrift Shop - Clothing section",
-  },
-  {
-    src: "/shop11.jpeg",
-    alt: "Thrift Shop - Interior view",
-  },
-  {
-    src: "/shop12.png",
-    alt: "Thrift Shop - Merchandise display",
-  },
-  {
-    src: "/shop2.png",
-    alt: "Thrift Shop - Customer area",
-  },
-  {
-    src: "/shop21.png",
-    alt: "Thrift Shop - Volunteer workspace",
-  },
-  {
-    src: "/shop3.jpeg",
-    alt: "Thrift Shop - Donation sorting",
-  },
-  {
-    src: "/shop31.jpeg",
-    alt: "Thrift Shop - Community impact",
-  },
+  { src: "/foodcenter1.jpeg", altKey: "gallery.image1.alt" },
+  { src: "/foodcenter2.jpeg", altKey: "gallery.image2.alt" },
+  { src: "/foodcenter3.png", altKey: "gallery.image3.alt" },
+  { src: "/foodcenter4.png", altKey: "gallery.image4.alt" },
+  { src: "/shop1.png", altKey: "gallery.image5.alt" },
+  { src: "/shop11.jpeg", altKey: "gallery.image6.alt" },
+  { src: "/shop12.png", altKey: "gallery.image7.alt" },
+  { src: "/shop2.png", altKey: "gallery.image8.alt" },
+  { src: "/shop21.png", altKey: "gallery.image9.alt" },
+  { src: "/shop3.jpeg", altKey: "gallery.image10.alt" },
+  { src: "/shop31.jpeg", altKey: "gallery.image11.alt" },
 ]
 
 export default function GalleryPage() {
@@ -101,21 +69,22 @@ export default function GalleryPage() {
                     openLightbox(index)
                   }
                 }}
-                aria-label={`${t("gallery.viewImage")}: ${image.alt}`}
+                aria-label={`${t("gallery.viewImage")}: ${t(image.altKey)}`}
               >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={image.src || "/placeholder.svg"}
-                    alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    loading="lazy"
+                <div className="aspect-[4/3] overflow-hidden relative">
+                  <Image
+                    src={image.src}
+                    alt={t(image.altKey)}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="text-white font-semibold text-lg mb-1">{image.alt}</h3>
+                    <h3 className="text-white font-semibold text-lg mb-1">{t(image.altKey)}</h3>
                   </div>
                 </div>
 
@@ -166,7 +135,7 @@ export default function GalleryPage() {
 
       {/* Lightbox */}
       <Lightbox
-        images={galleryImages}
+        images={galleryImages.map((img) => ({ src: img.src, alt: t(img.altKey) }))}
         currentIndex={currentImageIndex}
         isOpen={lightboxOpen}
         onClose={closeLightbox}

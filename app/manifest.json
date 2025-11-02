@@ -1,0 +1,46 @@
+{
+  "name": "עמותת מתנדבי הרצליה",
+  "short_name": "מתנדבי הרצליה",
+  "description": "התנדבות ותרומות למען הקהילה בהרצליה",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F9F7F4",
+  "theme_color": "#2563EB",
+  "orientation": "portrait-primary",
+  "lang": "he",
+  "dir": "rtl",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["social", "community", "lifestyle"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "תרומה",
+      "short_name": "תרומה",
+      "description": "תרמו עכשיו",
+      "url": "/#donate",
+      "icons": []
+    },
+    {
+      "name": "התנדבות",
+      "short_name": "התנדבות",
+      "description": "הצטרפו להתנדבות",
+      "url": "/#volunteer",
+      "icons": []
+    },
+    {
+      "name": "חנויות",
+      "short_name": "חנויות",
+      "description": "החנויות שלנו",
+      "url": "/#stores",
+      "icons": []
+    }
+  ]
+}

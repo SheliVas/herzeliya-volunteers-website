@@ -2,13 +2,16 @@
 
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/language-context"
+import { trackLanguageChange } from "@/lib/analytics"
 import { Globe } from "lucide-react"
 
 export function LanguageToggle() {
   const { language, setLanguage, t } = useLanguage()
 
   const toggleLanguage = () => {
-    setLanguage(language === "en" ? "he" : "en")
+    const newLanguage = language === "en" ? "he" : "en"
+    setLanguage(newLanguage)
+    trackLanguageChange(newLanguage)
   }
 
   return (

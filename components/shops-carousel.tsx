@@ -233,12 +233,27 @@ export function ShopsCarousel({ shops }: ShopsCarouselProps) {
                     </h4>
                     <p className="text-sm leading-relaxed text-center">{t(shop.itemsKey)}</p>
                   </div>
-                  <Button
-                    asChild
-                    className={`w-full ${colorClasses.bg} ${colorClasses.bgHover} transition-all duration-300`}
-                  >
-                    <a href={`tel:${t(shop.phoneKey)}`}>{t("home.shops.callManager")}</a>
-                  </Button>
+                  <div className="space-y-2">
+                    <Button
+                      asChild
+                      className={`w-full ${colorClasses.bg} ${colorClasses.bgHover} transition-all duration-300`}
+                    >
+                      <a href={`tel:${t(shop.phoneKey)}`}>{t("home.shops.callManager")}</a>
+                    </Button>
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="w-full transition-all duration-300"
+                    >
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(t(shop.titleKey))}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {t("home.shops.navigate")}
+                      </a>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </div>

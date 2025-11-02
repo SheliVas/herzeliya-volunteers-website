@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://herzeliya-volunteers.org.il/</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://herzeliya-volunteers.org.il/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://herzeliya-volunteers.org.il/" />
+  </url>
+
+  <!-- Gallery Page -->
+  <url>
+    <loc>https://herzeliya-volunteers.org.il/gallery</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://herzeliya-volunteers.org.il/gallery" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://herzeliya-volunteers.org.il/gallery" />
+  </url>
+
+  <!-- Section Anchors (for better indexing) -->
+  <url>
+    <loc>https://herzeliya-volunteers.org.il/#about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://herzeliya-volunteers.org.il/#stores</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://herzeliya-volunteers.org.il/#volunteer</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://herzeliya-volunteers.org.il/#contact-us</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://herzeliya-volunteers.org.il/#privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
